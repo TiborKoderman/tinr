@@ -1,0 +1,13 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/enemy/blood splatter.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.1100552
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/2way corridor.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/2way corridor.xnb","TextureProcessor","Texture2DContent",258,16469,0.1949038
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/2way corridord L.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/2way corridord L.xnb","TextureProcessor","Texture2DContent",258,16469,0.0050253
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/3way corridor.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/3way corridor.xnb","TextureProcessor","Texture2DContent",312,16469,0.0033696
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/4way corridor.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/4way corridor.xnb","TextureProcessor","Texture2DContent",322,16469,0.003056
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/big room 1.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/big room 1.xnb","TextureProcessor","Texture2DContent",310,16469,0.0023784
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/big room 2 L.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/big room 2 L.xnb","TextureProcessor","Texture2DContent",337,16469,0.0032028
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/big room 2.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/big room 2.xnb","TextureProcessor","Texture2DContent",362,16469,0.002497
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/big room 3.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/big room 3.xnb","TextureProcessor","Texture2DContent",362,16469,0.0026816
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/big room 4.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/big room 4.xnb","TextureProcessor","Texture2DContent",373,16469,0.0051592
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/map/staircase.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/map/staircase.xnb","TextureProcessor","Texture2DContent",471,16469,0.0025426
+"/home/kodermant@inea.corp/repos/tinr/tinr/Content/player/ball.png","/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.1890423
