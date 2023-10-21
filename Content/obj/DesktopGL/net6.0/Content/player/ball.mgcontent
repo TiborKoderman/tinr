@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/kodermant@inea.corp/repos/tinr/tinr/Content/player/ball.png</SourceFile>
-  <SourceTime>2023-10-18T09:28:01.3353416+02:00</SourceTime>
-  <DestFile>/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/Content/player/ball.xnb</DestFile>
-  <DestTime>2023-10-18T09:28:13.3913191+02:00</DestTime>
+  <SourceFile>/home/tibor/repos/tinr/Content/player/ball.png</SourceFile>
+  <SourceTime>2023-10-20T15:07:58.1642104+02:00</SourceTime>
+  <DestFile>/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/ball.xnb</DestFile>
+  <DestTime>2023-10-20T21:49:17.4255688+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

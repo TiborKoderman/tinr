@@ -35,11 +35,6 @@ namespace tinr.Sprites{
 
             Position += velocity;
 
-            //get mouse position as rotation from the center of the player
-            var mousePosition = Mouse.GetState().Position.ToVector2();
-            var direction = Center - mousePosition;
-            Rotation = (float)Math.Atan2(direction.Y, direction.X) + MathHelper.ToRadians(90);
-
         }
     }
 }

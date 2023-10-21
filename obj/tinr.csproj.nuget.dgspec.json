@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kodermant@inea.corp/repos/tinr/tinr/tinr.csproj": {}
+    "/home/tibor/repos/tinr/tinr.csproj": {}
   },
   "projects": {
-    "/home/kodermant@inea.corp/repos/tinr/tinr/tinr.csproj": {
+    "/home/tibor/repos/tinr/tinr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kodermant@inea.corp/repos/tinr/tinr/tinr.csproj",
+        "projectUniqueName": "/home/tibor/repos/tinr/tinr.csproj",
         "projectName": "tinr",
-        "projectPath": "/home/kodermant@inea.corp/repos/tinr/tinr/tinr.csproj",
-        "packagesPath": "/home/kodermant@inea.corp/.nuget/packages/",
-        "outputPath": "/home/kodermant@inea.corp/repos/tinr/tinr/obj/",
+        "projectPath": "/home/tibor/repos/tinr/tinr.csproj",
+        "packagesPath": "/home/tibor/.nuget/packages/",
+        "outputPath": "/home/tibor/repos/tinr/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kodermant@inea.corp/.nuget/NuGet/NuGet.Config"
+          "/home/tibor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -60,7 +60,15 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
               "version": "[6.0.23, 6.0.23]"
             }
           ],
@@ -69,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     }
