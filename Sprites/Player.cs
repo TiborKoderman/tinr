@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -6,6 +7,29 @@ using Microsoft.Xna.Framework.Input;
 namespace tinr.Sprites{
     public class Player : Sprite
     {
+        enum State
+        {
+            Walking,
+            Attacking,
+            Idle,
+            Dashing
+        }
+
+        enum Direction
+        {
+            U,
+            D,
+            L,
+            R,
+            UL,
+            UR,
+            DL,
+            DR
+        }
+
+        // Direction direction = Direction.D;
+        // State state = State.Idle;
+
         public Player(Texture2D texture) : base(texture)
         {
         }
@@ -35,6 +59,17 @@ namespace tinr.Sprites{
 
             Position += velocity;
 
+            // if(velocity.X != 0 || velocity.Y != 0)
+            // {
+            //     state = State.Walking;
+            // }
+            // else
+            // {
+            //     state = State.Idle;
+            // }
+            
+                        
         }
+
     }
 }

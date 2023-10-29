@@ -37,7 +37,6 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-
         base.Initialize();
     }
 
@@ -54,6 +53,7 @@ public class Game1 : Game
         {
             //scale the background to 400x400
             new Sprite(Content.Load<Texture2D>("map/big room 1")){ Position = new Vector2(0,0), Scale = new Vector2(8f, 8f)},
+            new Sprite(Content.Load<Texture2D>("map/3way corridor")){ Position = new Vector2(0,-8*64), Scale = new Vector2(8f, 8f)},
             _player,
             new Sprite(Content.Load<Texture2D>("enemy/blood splatter")),
             

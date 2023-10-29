@@ -9,6 +9,6 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/tinr.csproj"
-        }
+        },
     ]
 }
