@@ -3,6 +3,7 @@ using System.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace tinr.Sprites{
     public class Player : Sprite
@@ -40,9 +41,10 @@ namespace tinr.Sprites{
 
             var speed = 3f;
 
+
             if(Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                velocity.X -= speed;   
+                velocity.X -= speed;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
@@ -57,16 +59,16 @@ namespace tinr.Sprites{
                 velocity.Y += speed;
             }
 
-            Position += velocity;
+            var touchState = TouchPanel.GetState();
+            if (touchState.Count > 0)
+            {
+                var touchPosition = touchState[0].Position;
+                var touchDirection = touchPosition - Position;
+                touchDirection.Normalize();
+                velocity += touchDirection * speed;
+            }
 
-            // if(velocity.X != 0 || velocity.Y != 0)
-            // {
-            //     state = State.Walking;
-            // }
-            // else
-            // {
-            //     state = State.Idle;
-            // }
+            Position += velocity;
             
                         
         }
