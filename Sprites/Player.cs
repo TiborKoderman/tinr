@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,61 +17,64 @@ namespace tinr.Sprites{
             Dashing
         }
 
-        enum Direction
-        {
-            U,
-            D,
-            L,
-            R,
-            UL,
-            UR,
-            DL,
-            DR
-        }
-
         // Direction direction = Direction.D;
         // State state = State.Idle;
+
+        public Bullet Bullet;
 
         public Player(Texture2D texture) : base(texture)
         {
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            var velocity = new Vector2();
 
-            var speed = 3f;
+            _previousKey = _currentKey;
+            _currentKey = Keyboard.GetState();
 
 
-            if(Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                velocity.X -= speed;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                velocity.X += speed;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-            {
-                velocity.Y -= speed;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                velocity.Y += speed;
-            }
+            Direction = new Vector2((float)Math.Cos(_rotation), (float)Math.Sin(_rotation));  
 
-            var touchState = TouchPanel.GetState();
-            if (touchState.Count > 0)
+            if(_currentKey.IsKeyDown(Keys.A))
             {
-                var touchPosition = touchState[0].Position;
-                var touchDirection = touchPosition - Position;
-                touchDirection.Normalize();
-                velocity += touchDirection * speed;
+                Position += LinearVelocity * new Vector2(-1,0);
+            }
+            if (_currentKey.IsKeyDown(Keys.D))
+            {
+                Position -= LinearVelocity * new Vector2(-1, 0);
+            }
+            if (_currentKey.IsKeyDown(Keys.W))
+            {
+                Position += LinearVelocity * new Vector2(0, -1);
+            }
+            if (_currentKey.IsKeyDown(Keys.S))
+            {
+                Position -= LinearVelocity * new Vector2(0, -1);
             }
 
-            Position += velocity;
-            
-                        
+
+
+            if (_currentKey.IsKeyDown(Keys.Space) && _previousKey.IsKeyUp(Keys.Space))
+            {
+                AddBullet(sprites);
+            }
+
+            //update position
+            // Position += Direction * LinearVelocity;
+            }
+
+        private void AddBullet(List<Sprite> sprites)
+        {
+                Bullet = Bullet.Clone() as Bullet;
+                //rotate 90 degrees counter clockwise
+                Bullet._rotation = _rotation - (float)(Math.PI / 2);
+                Bullet.Direction = new Vector2((float)Math.Cos(Bullet._rotation), (float)Math.Sin(Bullet._rotation));
+                Bullet.Position = this.Position;
+                Bullet.LinearVelocity = this.LinearVelocity*2;
+                Bullet.LifeSpan = 2f;
+                Bullet.Parent = this;
+
+                sprites.Add(Bullet);
         }
 
     }

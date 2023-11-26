@@ -16,8 +16,10 @@
     <File>/home/tibor/repos/tinr/Content/map/big room 4.png</File>
     <File>/home/tibor/repos/tinr/Content/map/staircase.png</File>
     <File>/home/tibor/repos/tinr/Content/player/ball.png</File>
+    <File>/home/tibor/repos/tinr/Content/sprites/bullet_flying.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/kodermant@inea.corp/repos/tinr/tinr/Content/enemy/blood splatter.png</SourceFile>
-  <SourceTime>2023-10-16T14:33:44.4237585+02:00</SourceTime>
-  <DestFile>/home/kodermant@inea.corp/repos/tinr/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb</DestFile>
-  <DestTime>2023-10-17T08:03:08.9795875+02:00</DestTime>
+  <SourceFile>/home/tibor/repos/tinr/Content/enemy/blood splatter.png</SourceFile>
+  <SourceTime>2023-10-20T15:07:58.1608771+02:00</SourceTime>
+  <DestFile>/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb</DestFile>
+  <DestTime>2023-11-26T10:32:58.3635462+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

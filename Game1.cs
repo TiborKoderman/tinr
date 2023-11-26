@@ -18,11 +18,14 @@ public class Game1 : Game
 
     private List<Component> _components;
 
+    private List<Sprite> _sprites;
+
     private Player _player;
 
+
     //default resolution is 1920x1080
-    public static int ScreenHeight = 1080/2;
-    public static int ScreenWidth = 1920/2;
+    public static int ScreenHeight = 1080 / 2;
+    public static int ScreenWidth = 1920 / 2;
 
     public Game1()
     {
@@ -47,7 +50,14 @@ public class Game1 : Game
 
         _camera = new Camera();
 
-        _player = new Player(Content.Load<Texture2D>("player/ball"));
+        var playerTexture = Content.Load<Texture2D>("player/ball");
+
+        _player = new Player(playerTexture){
+                Position = new Vector2(100, 100),
+                Scale = new Vector2(1f, 1f),
+                Bullet = new Bullet(Content.Load<Texture2D>("sprites/bullet_flying")),
+            };
+
 
         _components = new List<Component>()
         {
@@ -56,8 +66,13 @@ public class Game1 : Game
             new Sprite(Content.Load<Texture2D>("map/3way corridor")){ Position = new Vector2(0,-8*64), Scale = new Vector2(8f, 8f)},
             _player,
             new Sprite(Content.Load<Texture2D>("enemy/blood splatter")),
-            
+
         };
+        _sprites = new List<Sprite>()
+        {
+            _player,
+        };
+
     }
 
     protected override void Update(GameTime gameTime)
@@ -65,13 +80,28 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        foreach (var Component in _components)
+        // foreach (var Component in _components)
+        // {
+        //     Component.Update(gameTime, );
+        // }
+
+        foreach (var sprite in _sprites.ToArray())
         {
-            Component.Update(gameTime);
+            sprite.Update(gameTime, _sprites);
         }
 
+        for(int i = 0; i < _sprites.Count; i++)
+        {
+            if(_sprites[i].IsRemoved)
+            {
+                _sprites.RemoveAt(i);
+                i--;
+            }
+        }
+
+
         _camera.Follow(_player);
-            
+
 
         base.Update(gameTime);
     }
@@ -81,9 +111,14 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
-        foreach (var Component in _components)
+        foreach (var component in _components)
         {
-            Component.Draw(gameTime, _spriteBatch);
+            component.Draw(gameTime, _spriteBatch);
+        }
+
+        foreach (var sprite in _sprites)
+        {
+            sprite.Draw(gameTime, _spriteBatch);
         }
         _spriteBatch.End();
 

@@ -11,3 +11,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/home/tibor/repos/tinr/Content/map/big room 4.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/big room 4.xnb","TextureProcessor","Texture2DContent",373,16469,0.0011324
 "/home/tibor/repos/tinr/Content/map/staircase.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/staircase.xnb","TextureProcessor","Texture2DContent",471,16469,0.0008232
 "/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0011271
+"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.1604762
