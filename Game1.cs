@@ -14,12 +14,11 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     // private Camera _camera;
-    protected Game game;
+
+    //pointer to this instance of Game1
+    public static Game1 game;
 
     private List<Entity> scene;
-
-    private Player player;
-
     SpriteSystem spriteSystem;
 
     //default resolution is 1920x1080
@@ -34,28 +33,29 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = ScreenWidth;
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-        game = this;
 
+        //pointer to this object
+        game = this;
     }
 
     protected override void Initialize()
     {
         base.Initialize();
 
-        //wait untill GraphicsDevice is ready
-        while (GraphicsDevice == null)
-        {
-            System.Threading.Thread.Sleep(1);
-        }
-        
     }
 
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         spriteSystem = new SpriteSystem();
-        player = new Player();
 
+        scene = new List<Entity>();
+
+        var player = new Entity();
+        player.AddComponent(new TransformComponent(new Vector2(100, 100))); // position the component at (100,100)
+        player.AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")));
+
+        scene.Add(player);
     }
 
     protected override void Update(GameTime gameTime)
@@ -89,8 +89,7 @@ public class Game1 : Game
 
         spriteSystem.Draw(_spriteBatch);
 
-
-
+        _spriteBatch.End();
         base.Draw(gameTime);
     }
 }
