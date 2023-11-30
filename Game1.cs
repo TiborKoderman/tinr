@@ -96,7 +96,6 @@ public class Game1 : Game
             {
                 _sprites.RemoveAt(i);
                 i--;
-            }
         }
 
 
