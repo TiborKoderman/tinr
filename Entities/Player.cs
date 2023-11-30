@@ -1,11 +1,17 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using tinr;
 
-class Player : Entity
+namespace tinr
 {
-    public Player()
+    class Player : Entity
     {
-        AddComponent(new TransformComponent(new Vector2(100,100)) ); // position the component at (100,100) coordinate
-        AddComponent(new SpriteComponent());
+        public Player()
+        {
+            AddComponent(new TransformComponent(new Vector2(100, 100))); // position the component at (100,100) 
+            // load texture "player/ball"
+            Texture2D texture = this.Content.Load<Texture2D>("player/ball");
+            AddComponent(new SpriteComponent(texture));
+        }
     }
 }
