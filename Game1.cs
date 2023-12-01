@@ -52,10 +52,13 @@ public class Game1 : Game
         scene = new List<Entity>();
 
         var player = new Entity();
-        player.AddComponent(new TransformComponent(new Vector2(100, 100))); // position the component at (100,100)
+        player.AddComponent(new TransformComponent(){
+            position = new Vector2(100,100)});
         player.AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")));
 
         scene.Add(player);
+
+        
     }
 
     protected override void Update(GameTime gameTime)
@@ -67,15 +70,6 @@ public class Game1 : Game
 
         TransformSystem.Update(gameTime);
         SpriteSystem.Update(gameTime);
-
-
-        // foreach (Entity entity in scene) // assume scene is a list or something iterable
-        // {
-        //     foreach (Component component in entity.components)
-        //     {
-        //         component.Update(gameTime);
-        //     }
-        // }
 
         base.Update(gameTime);
     }

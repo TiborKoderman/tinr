@@ -1,16 +1,23 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using tinr;
-public class Entity : Game1
+public class Entity
 {
     public int ID { get; set; }
 
     public List<Component> components = new();
 
-    public void AddComponent(Component component)
+    public Entity()
+    {
+        ID = EntityManager.GetNextID();
+    }
+
+
+    public Entity AddComponent(Component component)
     {
         component.entity = this;
         components.Add(component);
+        return this;
     }
 
     public T GetComponent<T>() where T : Component
