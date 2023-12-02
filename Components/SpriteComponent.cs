@@ -17,7 +17,7 @@ class SpriteComponent : Component
         SpriteSystem.Register(this);
     }
 
-    public virtual void Update(float gameTime)
+    public override void Update(GameTime gameTime)
     {
          _transform = entity.GetComponent<TransformComponent>();
 
@@ -27,6 +27,6 @@ class SpriteComponent : Component
     {
         //draw the sprite
         if(_transform != null)
-        spriteBatch.Draw(_texture, _transform.position, null, Color.White, _transform.rotation, _origin, _transform.scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(_texture, _transform.position, null, Color.White, _transform.rotation, _origin, _transform.scale, SpriteEffects.None, 0f);
     }
 }
