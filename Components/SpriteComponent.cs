@@ -18,9 +18,6 @@ class SpriteComponent : Component
 
     private Vector2 velocity = Vector2.Zero;
 
-    private KeyboardControllerComponent _keyboardController;
-
-
     public SpriteComponent(Texture2D texture)
     {
         _texture = texture;
@@ -31,7 +28,7 @@ class SpriteComponent : Component
 
     public override void Update(GameTime gameTime)
     {
-         transform = entity.GetComponent<TransformComponent>();
+        transform = entity.GetComponent<TransformComponent>();
         if(transform != null){
             transform.position += velocity;
         }

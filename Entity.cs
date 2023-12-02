@@ -31,4 +31,9 @@ public class Entity
         }
         return null;
     }
+
+
+    ~Entity()
+    {
+    }
 }

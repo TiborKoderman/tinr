@@ -58,7 +58,8 @@ public class Game1 : Game
             position = new Vector2(0,0)})
         .AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")))
         .AddComponent(new KeyboardControllerComponent())
-        .AddComponent(new CameraComponent());
+        .AddComponent(new CameraComponent())
+        .AddComponent(new HealthComponent(100));
         scene.Add(player);
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
