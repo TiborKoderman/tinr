@@ -8,6 +8,7 @@ class TransformComponent : Component
     public float layerDepth = 0;
     public float rotation = 0;
 
+
     public TransformComponent()
     {
         TransformSystem.Register(this);

@@ -25,6 +25,8 @@ public class Game1 : Game
     public static int ScreenHeight = 1080 / 2;
     public static int ScreenWidth = 1920 / 2;
 
+    private KeyboardControllerComponent _KBController;
+    private CameraComponent _camera;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -51,14 +53,16 @@ public class Game1 : Game
 
         scene = new List<Entity>();
 
-        var player = new Entity();
-        player.AddComponent(new TransformComponent(){
-            position = new Vector2(100,100)});
-        player.AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")));
-
+        var player = new Entity()
+        .AddComponent(new TransformComponent(){
+            position = new Vector2(0,0)})
+        .AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")))
+        .AddComponent(new KeyboardControllerComponent())
+        .AddComponent(new CameraComponent());
         scene.Add(player);
 
-        
+        _KBController = player.GetComponent<KeyboardControllerComponent>();
+        _camera = player.GetComponent<CameraComponent>();
     }
 
     protected override void Update(GameTime gameTime)
@@ -71,6 +75,14 @@ public class Game1 : Game
         TransformSystem.Update(gameTime);
         SpriteSystem.Update(gameTime);
 
+
+        _KBController.Update(gameTime);
+        _camera.Update(gameTime);
+
+        //print player position
+        System.Console.WriteLine(scene[0].GetComponent<TransformComponent>().position);
+
+
         base.Update(gameTime);
     }
 
@@ -79,7 +91,7 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
-        _spriteBatch.Begin();
+        _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
 
         spriteSystem.Draw(_spriteBatch);
 
