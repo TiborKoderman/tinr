@@ -14,8 +14,8 @@ class CameraComponent : Component
         var target = entity.GetComponent<SpriteComponent>();
 
         var position = Matrix.CreateTranslation(
-            -target.transform.position.X - (target.rectangle.Width / 2),
-            -target.transform.position.Y - (target.rectangle.Height / 2),
+            -target.transform.position.X,
+            -target.transform.position.Y,
             0);
 
         var offset = Matrix.CreateTranslation(
