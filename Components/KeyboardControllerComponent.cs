@@ -16,6 +16,11 @@ class KeyboardControllerComponent : Component
 
         var sprite = entity.GetComponent<SpriteComponent>();
 
+        if(sprite == null)
+            return;
+        if (transform == null)
+            return;
+
 
         _previousKey = _currentKey;
         _currentKey = Keyboard.GetState();

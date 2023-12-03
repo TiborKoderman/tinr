@@ -45,12 +45,6 @@ class HealthComponent : Component
             Destroy();
         }
 
-        if(gameTime.TotalGameTime - lastDamageTime > TimeSpan.FromSeconds(1))
-        {
-            lastDamageTime = gameTime.TotalGameTime;
-            Damage(20);
-        }
-
     }
 
     public void Destroy()

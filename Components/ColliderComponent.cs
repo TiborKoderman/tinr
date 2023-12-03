@@ -12,7 +12,7 @@ class ColliderComponent : Component
         ColliderSystem.Register(this);
     }
 
-    public void Update(GameTime gameTime)
+    public override void Update(GameTime gameTime)
     {
         transform = entity.GetComponent<TransformComponent>();
         Collider.X = (int)transform.position.X;

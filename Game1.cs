@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
@@ -77,7 +78,8 @@ public class Game1 : Game
         var enemy = new Entity();
         enemy.AddComponent(new TransformComponent(){
             position = new Vector2(32,32)})
-        .AddComponent(new SpriteComponent(textures["enemy"]));
+        .AddComponent(new SpriteComponent(textures["enemy"]))
+        .AddComponent(new HealthComponent(100));
 
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
@@ -99,12 +101,16 @@ public class Game1 : Game
         _KBController.Update(gameTime);
         _camera.Update(gameTime);
 
+        // if(player.GetComponent<HealthComponent>().health <= 0)
+        // {
+        //     gameOver = true;
+        // }
 
-
-        if(gameOver == true)
-        {
-            Exit();
-        }
+        // if(gameOver == true)
+        // {
+        //     Console.WriteLine("Game Over");
+        //     Exit();
+        // }
         base.Update(gameTime);
     }
 

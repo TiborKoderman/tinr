@@ -13,6 +13,11 @@ class CameraComponent : Component
     {
         var target = entity.GetComponent<SpriteComponent>();
 
+        if (target == null)
+        {
+            return;
+        }
+
         var position = Matrix.CreateTranslation(
             -target.transform.position.X,
             -target.transform.position.Y,

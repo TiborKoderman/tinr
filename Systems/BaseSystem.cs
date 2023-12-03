@@ -18,7 +18,7 @@ class BaseSystem<T> where T : Component
 
     public static void Update(GameTime gameTime)
     {
-        foreach (T component in components)
+        foreach (T component in components.ToArray())
         {
             component.Update(gameTime);
         }

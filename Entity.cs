@@ -45,8 +45,11 @@ public class Entity
 
     public void Cleanup()
     {
-        //unregister all components from systems
-
+        foreach (var component in components)
+        {
+            typeof(BaseSystem<>).MakeGenericType(component.GetType()).GetMethod("Unregister").Invoke(null, new object[] { component });
+        }
+        components.Clear();
     }
 
     ~Entity()

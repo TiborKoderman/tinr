@@ -14,4 +14,9 @@ class EnvironmentSystem : BaseSystem<EnvironmentComponent>
             component.Draw(spriteBatch);
         }
     }
+
+    // public static void Unregister(EnvironmentComponent component)
+    // {
+    //     components.Remove(component);
+    // }
 }

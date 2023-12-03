@@ -9,4 +9,9 @@ class SpriteSystem : BaseSystem<SpriteComponent>
             component.Draw(spriteBatch);
         }
     }
+
+    //     public static void Unregister(SpriteComponent component)
+    // {
+    //     components.Remove(component);
+    // }
 }
