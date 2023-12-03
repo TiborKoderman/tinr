@@ -27,6 +27,8 @@ public class Game1 : Game
 
     private KeyboardControllerComponent _KBController;
     private CameraComponent _camera;
+
+    public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -53,14 +55,27 @@ public class Game1 : Game
 
         scene = new List<Entity>();
 
+        loadTextures();
+
+
+
         var player = new Entity()
         .AddComponent(new TransformComponent(){
             position = new Vector2(0,0)})
-        .AddComponent(new SpriteComponent(Content.Load<Texture2D>("player/ball")))
+        .AddComponent(new SpriteComponent(textures["player"]))
         .AddComponent(new KeyboardControllerComponent())
         .AddComponent(new CameraComponent())
         .AddComponent(new HealthComponent(100));
         scene.Add(player);
+
+
+        //load enemy texture from enemies/Enemy where the texture is 64x64 and is located at 0,0
+
+        var enemy = new Entity();
+        enemy.AddComponent(new TransformComponent(){
+            position = new Vector2(100,100)})
+        .AddComponent(new SpriteComponent(textures["enemy"]));
+
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
@@ -98,5 +113,16 @@ public class Game1 : Game
 
         _spriteBatch.End();
         base.Draw(gameTime);
+    }
+
+    private void loadTexture(string name, string path)
+    {
+        textures.Add(name, Content.Load<Texture2D>(path));
+    }
+
+    private void loadTextures()
+    {
+        loadTexture("player", "player/Player");
+        loadTexture("enemy", "enemy/Enemies");
     }
 }

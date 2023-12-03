@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using tinr;
 public class Entity
 {
-    public int ID { get; set; }
+    public UInt64 ID { get; set; }
 
     public List<Component> components = new();
+
+    public List<Entity> children = new();
 
     public Entity()
     {

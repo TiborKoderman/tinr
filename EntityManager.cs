@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 
 class EntityManager
 {
-    private static int _nextID = 0;
+    private static UInt64 _nextID = 0;
 
-    public static int GetNextID()
+    public static UInt64 GetNextID()
     {
         return _nextID++;
     }

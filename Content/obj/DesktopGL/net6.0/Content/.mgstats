@@ -1,5 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.174409
+"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.1578242
 "/home/tibor/repos/tinr/Content/map/2way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/2way corridor.xnb","TextureProcessor","Texture2DContent",258,16469,0.0027739
 "/home/tibor/repos/tinr/Content/map/2way corridord L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/2way corridord L.xnb","TextureProcessor","Texture2DContent",258,16469,0.0018913
 "/home/tibor/repos/tinr/Content/map/3way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/3way corridor.xnb","TextureProcessor","Texture2DContent",312,16469,0.0039762
@@ -9,6 +10,11 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/home/tibor/repos/tinr/Content/map/big room 2.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/big room 2.xnb","TextureProcessor","Texture2DContent",362,16469,0.0018769
 "/home/tibor/repos/tinr/Content/map/big room 3.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/big room 3.xnb","TextureProcessor","Texture2DContent",362,16469,0.0015401
 "/home/tibor/repos/tinr/Content/map/big room 4.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/big room 4.xnb","TextureProcessor","Texture2DContent",373,16469,0.0014984
+"/home/tibor/repos/tinr/Content/map/Powerups.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/Powerups.xnb","TextureProcessor","Texture2DContent",8848,131157,0.0043352
+"/home/tibor/repos/tinr/Content/map/Scene_spritesheet.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/Scene_spritesheet.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0106727
 "/home/tibor/repos/tinr/Content/map/staircase.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/staircase.xnb","TextureProcessor","Texture2DContent",471,16469,0.001807
 "/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0017491
+"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0012634
+"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0018296
+"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0034854
 "/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0009466

@@ -12,9 +12,12 @@ namespace tinr
     {
         public Entity entity;
 
-        public virtual void Update(GameTime gameTime) {
+
+
+        public virtual void Update(GameTime gameTime)
+        {
 
         }
-        
+
     }
 }

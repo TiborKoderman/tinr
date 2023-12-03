@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>/home/tibor/repos/tinr/Content/map/big room 2 L.png</SourceFile>
-  <SourceTime>2023-11-19T10:38:35.4431628+01:00</SourceTime>
+  <SourceTime>2023-10-20T15:07:58.1608771+02:00</SourceTime>
   <DestFile>/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 2 L.xnb</DestFile>
-  <DestTime>2023-11-30T14:29:27.6654843+01:00</DestTime>
+  <DestTime>2023-12-03T13:49:19.4480356+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

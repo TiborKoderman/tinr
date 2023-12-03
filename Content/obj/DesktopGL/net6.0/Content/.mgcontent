@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>/home/tibor/repos/tinr/Content/enemy/blood splatter.png</File>
+    <File>/home/tibor/repos/tinr/Content/enemy/Enemies.png</File>
     <File>/home/tibor/repos/tinr/Content/map/2way corridor.png</File>
     <File>/home/tibor/repos/tinr/Content/map/2way corridord L.png</File>
     <File>/home/tibor/repos/tinr/Content/map/3way corridor.png</File>
@@ -14,11 +15,22 @@
     <File>/home/tibor/repos/tinr/Content/map/big room 2.png</File>
     <File>/home/tibor/repos/tinr/Content/map/big room 3.png</File>
     <File>/home/tibor/repos/tinr/Content/map/big room 4.png</File>
+    <File>/home/tibor/repos/tinr/Content/map/Powerups.png</File>
+    <File>/home/tibor/repos/tinr/Content/map/Scene_spritesheet.png</File>
     <File>/home/tibor/repos/tinr/Content/map/staircase.png</File>
     <File>/home/tibor/repos/tinr/Content/player/ball.png</File>
+    <File>/home/tibor/repos/tinr/Content/player/bullet_flying.png</File>
+    <File>/home/tibor/repos/tinr/Content/player/Player.png</File>
+    <File>/home/tibor/repos/tinr/Content/player/sword slash.png</File>
     <File>/home/tibor/repos/tinr/Content/sprites/bullet_flying.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

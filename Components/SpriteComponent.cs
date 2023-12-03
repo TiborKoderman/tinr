@@ -1,16 +1,22 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using tinr;
 class SpriteComponent : Component
 {
-    private Texture2D _texture;
+    public string _textureName;
+    public Texture2D _texture;
     public TransformComponent transform;
+    private Rectangle sourceRectangle;
 
     public Rectangle rectangle
     {
         get
         {
             return new Rectangle((int)transform.position.X, (int)transform.position.Y, _texture.Width, _texture.Height);
+        }
+        set
+        {
         }
     }
 
@@ -21,10 +27,17 @@ class SpriteComponent : Component
     public SpriteComponent(Texture2D texture)
     {
         _texture = texture;
-        _origin = new Vector2(_texture.Width/2, _texture.Height/2);
-        // transform = entity.GetComponent<TransformComponent>();
+        sourceRectangle = new Rectangle(0, 0, 64, 64);
+        rectangle = new Rectangle(0, 0, 64, 64);
+
+        //set the origin to the center of the sprite
+        _origin = new Vector2(sourceRectangle.Width/2 , sourceRectangle.Height/2);
+
         SpriteSystem.Register(this);
     }
+
+
+
 
     public override void Update(GameTime gameTime)
     {
@@ -32,16 +45,12 @@ class SpriteComponent : Component
         if(transform != null){
             transform.position += velocity;
         }
-        // _keyboardController = entity.GetComponent<KeyboardControllerComponent>();
-        // if(_keyboardController != null){
-        //     _keyboardController.Update(gameTime);
-        // }
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
         //draw the sprite
         if(transform != null)
-            spriteBatch.Draw(_texture, transform.position, null, Color.White, transform.rotation, _origin, transform.scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(_texture, transform.position, sourceRectangle, Color.White, transform.rotation, _origin, transform.scale, SpriteEffects.None, 0f);            
     }
 }

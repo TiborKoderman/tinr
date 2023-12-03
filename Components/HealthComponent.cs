@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using tinr;
 class HealthComponent : Component
 {
@@ -9,16 +10,23 @@ class HealthComponent : Component
         }
         set
         {
-            health = value;
-            if (health <= 0)
-            {
-                // entity.Destroy();
-            }
+        }
+    }
+
+    public int maxHealth
+    {
+        get
+        {
+            return maxHealth;
+        }
+        set
+        {
         }
     }
 
     public HealthComponent(int initialHealth)
     {
+        maxHealth = initialHealth;
         health = initialHealth;
     }
 
@@ -30,5 +38,18 @@ class HealthComponent : Component
     public void Heal(int heal)
     {
         health += heal;
+        if (health + heal > maxHealth)
+        {
+            health = maxHealth;
+            return;
+        }
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        if (health <= 0)
+        {
+            // entity.Destroy();
+        }
     }
 }
