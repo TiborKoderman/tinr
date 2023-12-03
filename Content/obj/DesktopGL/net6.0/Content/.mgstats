@@ -1,6 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.174409
 "/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.1578242
+"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.2247504
 "/home/tibor/repos/tinr/Content/map/2way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/2way corridor.xnb","TextureProcessor","Texture2DContent",258,16469,0.0027739
 "/home/tibor/repos/tinr/Content/map/2way corridord L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/2way corridord L.xnb","TextureProcessor","Texture2DContent",258,16469,0.0018913
 "/home/tibor/repos/tinr/Content/map/3way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/3way corridor.xnb","TextureProcessor","Texture2DContent",312,16469,0.0039762

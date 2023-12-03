@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
 using tinr;
 public class Entity
@@ -10,9 +12,15 @@ public class Entity
 
     public List<Entity> children = new();
 
+    public Entity parent;
+
+    public float lifeSpan = 0f;
+
+    public bool isRemoved = false;
+
     public Entity()
     {
-        ID = EntityManager.GetNextID();
+
     }
 
 
@@ -35,8 +43,14 @@ public class Entity
         return null;
     }
 
+    public void Cleanup()
+    {
+        //unregister all components from systems
+
+    }
 
     ~Entity()
     {
+        Cleanup();
     }
 }

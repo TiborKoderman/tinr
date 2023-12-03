@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace tinr
+using tinr;
+
+public abstract class Component : Entity
 {
-    public abstract class Component
+    public Entity entity;
+
+    public virtual void Update(GameTime gameTime)
     {
-        public Entity entity;
-
-
-
-        public virtual void Update(GameTime gameTime)
-        {
-
-        }
 
     }
+
 }

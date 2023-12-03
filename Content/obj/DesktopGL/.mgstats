@@ -1,20 +1,21 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.1760891
-"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0243811
-"/home/tibor/repos/tinr/Content/map/2way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/2way corridor.xnb","TextureProcessor","Texture2DContent",258,16469,0.0011463
-"/home/tibor/repos/tinr/Content/map/2way corridord L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/2way corridord L.xnb","TextureProcessor","Texture2DContent",258,16469,0.0009767
-"/home/tibor/repos/tinr/Content/map/3way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/3way corridor.xnb","TextureProcessor","Texture2DContent",312,16469,0.0009705
-"/home/tibor/repos/tinr/Content/map/4way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/4way corridor.xnb","TextureProcessor","Texture2DContent",322,16469,0.0009512
-"/home/tibor/repos/tinr/Content/map/big room 1.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 1.xnb","TextureProcessor","Texture2DContent",310,16469,0.0009813
-"/home/tibor/repos/tinr/Content/map/big room 2 L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 2 L.xnb","TextureProcessor","Texture2DContent",337,16469,0.0012662
-"/home/tibor/repos/tinr/Content/map/big room 2.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 2.xnb","TextureProcessor","Texture2DContent",362,16469,0.001022
-"/home/tibor/repos/tinr/Content/map/big room 3.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 3.xnb","TextureProcessor","Texture2DContent",362,16469,0.0009936
-"/home/tibor/repos/tinr/Content/map/big room 4.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 4.xnb","TextureProcessor","Texture2DContent",373,16469,0.0011258
-"/home/tibor/repos/tinr/Content/map/Powerups.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Powerups.xnb","TextureProcessor","Texture2DContent",8848,131157,0.0067659
-"/home/tibor/repos/tinr/Content/map/Scene_spritesheet.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Scene_spritesheet.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0128932
-"/home/tibor/repos/tinr/Content/map/staircase.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/staircase.xnb","TextureProcessor","Texture2DContent",471,16469,0.0010762
-"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0009983
-"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0010981
-"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0025358
-"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.013175
-"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0012664
+"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.1471069
+"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.023028
+"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.0964501
+"/home/tibor/repos/tinr/Content/map/2way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/2way corridor.xnb","TextureProcessor","Texture2DContent",258,16469,0.000937
+"/home/tibor/repos/tinr/Content/map/2way corridord L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/2way corridord L.xnb","TextureProcessor","Texture2DContent",258,16469,0.0010228
+"/home/tibor/repos/tinr/Content/map/3way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/3way corridor.xnb","TextureProcessor","Texture2DContent",312,16469,0.0008001
+"/home/tibor/repos/tinr/Content/map/4way corridor.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/4way corridor.xnb","TextureProcessor","Texture2DContent",322,16469,0.0008546
+"/home/tibor/repos/tinr/Content/map/big room 1.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 1.xnb","TextureProcessor","Texture2DContent",310,16469,0.0027268
+"/home/tibor/repos/tinr/Content/map/big room 2 L.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 2 L.xnb","TextureProcessor","Texture2DContent",337,16469,0.0010485
+"/home/tibor/repos/tinr/Content/map/big room 2.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 2.xnb","TextureProcessor","Texture2DContent",362,16469,0.0009121
+"/home/tibor/repos/tinr/Content/map/big room 3.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 3.xnb","TextureProcessor","Texture2DContent",362,16469,0.0009472
+"/home/tibor/repos/tinr/Content/map/big room 4.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/big room 4.xnb","TextureProcessor","Texture2DContent",373,16469,0.0008222
+"/home/tibor/repos/tinr/Content/map/Powerups.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Powerups.xnb","TextureProcessor","Texture2DContent",8848,131157,0.0042038
+"/home/tibor/repos/tinr/Content/map/Scene_spritesheet.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Scene_spritesheet.xnb","TextureProcessor","Texture2DContent",1911,409685,0.009668
+"/home/tibor/repos/tinr/Content/map/staircase.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/staircase.xnb","TextureProcessor","Texture2DContent",471,16469,0.0009255
+"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0013055
+"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0010686
+"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0016525
+"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0051639
+"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0008548

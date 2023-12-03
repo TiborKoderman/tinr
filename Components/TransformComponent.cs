@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using tinr;
 
@@ -8,6 +9,24 @@ class TransformComponent : Component
     public float layerDepth = 0;
     public float rotation = 0;
 
+
+    public Vector2 direction
+    {
+        get
+        {
+            return new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation));
+        }
+        set{}
+    }
+
+    public Vector2 NormalizedDirection
+    {
+        get
+        {
+            return Vector2.Normalize(direction);
+        }
+        set{}
+    }
     
 
 

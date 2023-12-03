@@ -11,6 +11,11 @@ class BaseSystem<T> where T : Component
         components.Add(component);
     }
 
+    public static void Unregister(T component)
+    {
+        components.Remove(component);
+    }
+
     public static void Update(GameTime gameTime)
     {
         foreach (T component in components)

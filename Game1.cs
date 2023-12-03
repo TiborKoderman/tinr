@@ -13,12 +13,11 @@ public class Game1 : Game
     public GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    // private Camera _camera;
-
-    //pointer to this instance of Game1
     public static Game1 game;
+    // public List<Entity> scene;
 
-    private List<Entity> scene;
+    public static Scene scene1;
+
     SpriteSystem spriteSystem;
 
     //default resolution is 1920x1080
@@ -28,7 +27,11 @@ public class Game1 : Game
     private KeyboardControllerComponent _KBController;
     private CameraComponent _camera;
 
+    public static Entity player;
+    public static SpriteFont font;    
     public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
+    private bool gameOver = false;
+
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -53,27 +56,27 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         spriteSystem = new SpriteSystem();
 
-        scene = new List<Entity>();
+        scene1 = new Scene();
 
         loadTextures();
 
+        font = Content.Load<SpriteFont>("fonts/NotoSansMono");
 
 
-        var player = new Entity()
+
+        player = new Entity()
         .AddComponent(new TransformComponent(){
             position = new Vector2(0,0)})
         .AddComponent(new SpriteComponent(textures["player"]))
         .AddComponent(new KeyboardControllerComponent())
         .AddComponent(new CameraComponent())
         .AddComponent(new HealthComponent(100));
-        scene.Add(player);
+        scene1.Add(player);
 
-
-        //load enemy texture from enemies/Enemy where the texture is 64x64 and is located at 0,0
 
         var enemy = new Entity();
         enemy.AddComponent(new TransformComponent(){
-            position = new Vector2(100,100)})
+            position = new Vector2(32,32)})
         .AddComponent(new SpriteComponent(textures["enemy"]));
 
 
@@ -90,15 +93,18 @@ public class Game1 : Game
 
         TransformSystem.Update(gameTime);
         SpriteSystem.Update(gameTime);
+        HealthSystem.Update(gameTime);
 
 
         _KBController.Update(gameTime);
         _camera.Update(gameTime);
 
-        //print player position
-        System.Console.WriteLine(scene[0].GetComponent<TransformComponent>().position);
 
 
+        if(gameOver == true)
+        {
+            Exit();
+        }
         base.Update(gameTime);
     }
 
@@ -110,8 +116,13 @@ public class Game1 : Game
         _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
 
         spriteSystem.Draw(_spriteBatch);
+        HealthSystem.Draw(_spriteBatch);
 
         _spriteBatch.End();
+
+        //draw the UI
+        UI.drawIngameUI(_spriteBatch, player);
+
         base.Draw(gameTime);
     }
 
@@ -124,5 +135,6 @@ public class Game1 : Game
     {
         loadTexture("player", "player/Player");
         loadTexture("enemy", "enemy/Enemies");
+        loadTexture("bullet", "player/bullet_flying");
     }
 }

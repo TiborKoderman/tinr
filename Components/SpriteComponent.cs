@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,7 +13,6 @@ class SpriteComponent : Component
     public float RotationVelocity = 3f;
     public float LinearVelocity = 4f;
 
-    public Vector2 Direction;
 
     public Rectangle rectangle
     {
@@ -25,7 +25,7 @@ class SpriteComponent : Component
         }
     }
 
-    private Vector2 _origin;
+    public Vector2 _origin;
 
     private Vector2 velocity = Vector2.Zero;
 
@@ -47,10 +47,13 @@ class SpriteComponent : Component
     public override void Update(GameTime gameTime)
     {
         transform = entity.GetComponent<TransformComponent>();
+
         if (transform != null)
         {
             transform.position += velocity;
         }
+
+
     }
 
     public void Draw(SpriteBatch spriteBatch)
@@ -59,4 +62,19 @@ class SpriteComponent : Component
         if (transform != null)
             spriteBatch.Draw(_texture, transform.position, sourceRectangle, Color.White, transform.rotation, _origin, transform.scale, SpriteEffects.None, 0f);
     }
+
+    public void AddBullet()
+    {
+        var bullet = new Entity();
+        bullet.AddComponent(new TransformComponent()
+        {
+            position = transform.position,
+            rotation = transform.rotation
+        })
+        .AddComponent(new SpriteComponent(Game1.game.textures["bullet"]))
+        .AddComponent(new HealthComponent(1))
+        .AddComponent(new BulletComponent());
+        EntityManager.AddEntity(bullet);
+    }
+
 }

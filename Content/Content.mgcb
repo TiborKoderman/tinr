@@ -37,6 +37,13 @@
 /processorParam:TextureFormat=Color
 /build:enemy/Enemies.png
 
+#begin fonts/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/File.spritefont;fonts/NotoSansMono.spritefont
+
 #begin map/2way corridor.png
 /importer:TextureImporter
 /processor:TextureProcessor

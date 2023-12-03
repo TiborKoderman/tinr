@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>/home/tibor/repos/tinr/Content/enemy/blood splatter.png</File>
     <File>/home/tibor/repos/tinr/Content/enemy/Enemies.png</File>
+    <File>/home/tibor/repos/tinr/Content/fonts/File.spritefont</File>
     <File>/home/tibor/repos/tinr/Content/map/2way corridor.png</File>
     <File>/home/tibor/repos/tinr/Content/map/2way corridord L.png</File>
     <File>/home/tibor/repos/tinr/Content/map/3way corridor.png</File>
@@ -27,6 +28,7 @@
   <DestFiles>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File>fonts/NotoSansMono.spritefont</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
