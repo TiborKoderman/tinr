@@ -142,5 +142,6 @@ public class Game1 : Game
         loadTexture("player", "player/Player");
         loadTexture("enemy", "enemy/Enemies");
         loadTexture("bullet", "player/bullet_flying");
+        loadTexture("healthbar", "ui/UIelements");
     }
 }
