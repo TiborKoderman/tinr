@@ -11,7 +11,6 @@ class TransformComponent : Component
     public float layerDepth = 0;
     public float rotation = 0; // looking up is 0, looking right is pi/2, looking down is pi, looking left is 3pi/2
 
-
     public Vector2 direction
     {
         get

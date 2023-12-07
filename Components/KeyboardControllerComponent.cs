@@ -10,17 +10,26 @@ class KeyboardControllerComponent : Component
     private KeyboardState _previousKey;
     private KeyboardState _currentKey;
 
+    private TimeSpan lastBulletTime = TimeSpan.Zero;
+
+    public KeyboardControllerComponent()
+    {
+        lastBulletTime = TimeSpan.Zero;
+
+    }
+
     public override void Update(GameTime gameTime)
     {
-        var transform = entity.GetComponent<TransformComponent>();
+        TransformComponent transform = entity.GetComponent<TransformComponent>();
 
-        var sprite = entity.GetComponent<SpriteComponent>();
+        SpriteComponent sprite = entity.GetComponent<SpriteComponent>();
 
+
+        float firerate = sprite.firerate;
         if(sprite == null)
             return;
         if (transform == null)
             return;
-
 
         _previousKey = _currentKey;
         _currentKey = Keyboard.GetState();
@@ -48,10 +57,15 @@ class KeyboardControllerComponent : Component
                 sprite.velocity += new Vector2(sprite.LinearVelocity, 0);
             }
 
-            if (_currentKey.IsKeyDown(Keys.Space) && _previousKey.IsKeyUp(Keys.Space))
+            //fire at firerate
+            if (_currentKey.IsKeyDown(Keys.Space))
             {
+                if(gameTime.TotalGameTime - lastBulletTime > TimeSpan.FromSeconds(1 / firerate))
+                {
                 sprite.AddBullet();
-                Console.WriteLine("Space");
+                Console.WriteLine("*bang*");
+                lastBulletTime = gameTime.TotalGameTime;
+                }
             }
 
             // apply velocity

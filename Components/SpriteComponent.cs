@@ -15,7 +15,7 @@ class SpriteComponent : Component
 
     public float friction { get; set; }
 
-    public float firerate = 0.5f; //bullets per second
+    public float firerate = 1; //bullets per second
 
     public Nullable<float> lifeTime = null;
 
