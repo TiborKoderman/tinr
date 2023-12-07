@@ -11,8 +11,11 @@ class SpriteComponent : Component
     public Rectangle sourceRectangle;
 
     public float RotationVelocity = 3f;
-    public float LinearVelocity = 4f;
+    public float LinearVelocity = 1f;
 
+    public float friction {get;set;}
+
+    public float firerate = 1f;
 
     public Rectangle rectangle
     {
@@ -27,13 +30,17 @@ class SpriteComponent : Component
 
     public Vector2 _origin;
 
-    private Vector2 velocity = Vector2.Zero;
+    public Vector2 velocity = Vector2.Zero;
+
+    public float maxVelocity = 5;
 
     public SpriteComponent(Texture2D texture)
     {
         _texture = texture;
         sourceRectangle = new Rectangle(0, 0, 64, 64);
         rectangle = new Rectangle(0, 0, 64, 64);
+
+        friction = 0.3f;
 
         //set the origin to the center of the sprite
         _origin = new Vector2(sourceRectangle.Width / 2, sourceRectangle.Height / 2);
@@ -48,6 +55,13 @@ class SpriteComponent : Component
     {
         transform = entity.GetComponent<TransformComponent>();
 
+        if(velocity.Length() > maxVelocity)
+        {
+            velocity = Vector2.Normalize(velocity) * maxVelocity;
+        }
+
+        velocity *= 1-friction;
+
         if (transform != null)
         {
             transform.position += velocity;
@@ -58,7 +72,9 @@ class SpriteComponent : Component
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        //draw the sprite
+        // Rotate the sprite 90 degrees counterclockwise
+
+        // Draw the sprite
         if (transform != null)
             spriteBatch.Draw(_texture, transform.position, sourceRectangle, Color.White, transform.rotation, _origin, transform.scale, SpriteEffects.None, 0f);
     }
@@ -74,7 +90,13 @@ class SpriteComponent : Component
         .AddComponent(new SpriteComponent(Game1.game.textures["bullet"]))
         .AddComponent(new HealthComponent(1))
         .AddComponent(new BulletComponent());
+        var sprite = bullet.GetComponent<SpriteComponent>();
+        // set bullet velocity to forward at max speed
+        //transpose direction to bullet
+        sprite.velocity = transform.direction * sprite.LinearVelocity;
+        sprite.friction = 0f;
+
         EntityManager.AddEntity(bullet);
     }
 
-}
+    }

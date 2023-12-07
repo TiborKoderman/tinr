@@ -7,16 +7,16 @@ class TransformComponent : Component
     public Vector2 position = Vector2.Zero;
     public Vector2 scale = Vector2.One;
     public float layerDepth = 0;
-    public float rotation = 0;
+    public float rotation = 0; // looking up is 0, looking right is pi/2, looking down is pi, looking left is 3pi/2
 
 
     public Vector2 direction
     {
         get
         {
-            return new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation));
+            return new Vector2((float)Math.Sin(rotation), -(float)Math.Cos(rotation));
         }
-        set{}
+        set { }
     }
 
     public Vector2 NormalizedDirection
