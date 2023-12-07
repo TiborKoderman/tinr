@@ -30,7 +30,7 @@ public class Game1 : Game
 
     public static Entity player;
     public static SpriteFont font;    
-    public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
+    // public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
     private bool gameOver = false;
 
     public Game1()
@@ -68,7 +68,7 @@ public class Game1 : Game
         player = new Entity()
         .AddComponent(new TransformComponent(){
             position = new Vector2(0,0)})
-        .AddComponent(new SpriteComponent(textures["player"]))
+        .AddComponent(new SpriteComponent(TextureManager.GetTexture("player")))
         .AddComponent(new KeyboardControllerComponent())
         .AddComponent(new CameraComponent())
         .AddComponent(new HealthComponent(100));
@@ -78,7 +78,7 @@ public class Game1 : Game
         var enemy = new Entity();
         enemy.AddComponent(new TransformComponent(){
             position = new Vector2(32,32)})
-        .AddComponent(new SpriteComponent(textures["enemy"]))
+        .AddComponent(new SpriteComponent(TextureManager.GetTexture("enemy")))
         .AddComponent(new HealthComponent(100));
 
 
@@ -131,17 +131,11 @@ public class Game1 : Game
 
         base.Draw(gameTime);
     }
-
-    private void loadTexture(string name, string path)
-    {
-        textures.Add(name, Content.Load<Texture2D>(path));
-    }
-
     private void loadTextures()
     {
-        loadTexture("player", "player/Player");
-        loadTexture("enemy", "enemy/Enemies");
-        loadTexture("bullet", "player/bullet_flying");
-        loadTexture("healthbar", "ui/UIelements");
+        TextureManager.AddTexture("player", "player/Player");
+        TextureManager.AddTexture("enemy", "enemy/Enemies");
+        TextureManager.AddTexture("bullet", "player/bullet_flying");
+        TextureManager.AddTexture("healthbar", "ui/UIelements");
     }
 }

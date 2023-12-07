@@ -100,7 +100,7 @@ class SpriteComponent : Component
             position = transform.position + transform.direction * sourceRectangle.Height / 2,
             rotation = transform.rotation
         })
-        .AddComponent(new SpriteComponent(Game1.game.textures["bullet"]){
+        .AddComponent(new SpriteComponent(TextureManager.GetTexture("bullet")){
             lifeTime = 3f})
         .AddComponent(new HealthComponent(1))
         .AddComponent(new BulletComponent());

@@ -63,7 +63,7 @@ class KeyboardControllerComponent : Component
                 if(gameTime.TotalGameTime - lastBulletTime > TimeSpan.FromSeconds(1 / firerate))
                 {
                 sprite.AddBullet();
-                Console.WriteLine("*bang*");
+                // Console.WriteLine("*bang*");
                 lastBulletTime = gameTime.TotalGameTime;
                 }
             }
