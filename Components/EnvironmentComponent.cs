@@ -17,6 +17,8 @@ class EnvironmentComponent : Component
 
     // private Vector2 velocity = Vector2.Zero;
 
+    private bool debug = true;
+    
     public Rectangle sourceRectangle;
 
     private Vector2 _scale;
@@ -26,8 +28,8 @@ class EnvironmentComponent : Component
 
     public EnvironmentComponent(Vector2 position, Vector2 sourceCoords)
     {
-        _position = position*64;
-        sourceRectangle = new Rectangle((int)sourceCoords.X*64, (int)sourceCoords.Y*64,(int)sourceCoords.X*64+64, (int)sourceCoords.Y*64+64);
+        _position = position*64*8;
+        sourceRectangle = new Rectangle((int)sourceCoords.X*64, (int)sourceCoords.Y*64,64, 64);
         _texture = TextureManager.GetTexture("tiles");
         _origin = new Vector2(sourceRectangle.Width / 2, sourceRectangle.Height / 2);
         _scale = new Vector2(8, 8);
@@ -39,5 +41,7 @@ class EnvironmentComponent : Component
         //draw the sprite
         // _origin = new Vector2(0,0);
         spriteBatch.Draw(_texture, _position, sourceRectangle, Color.White, _rotation, _origin, _scale, SpriteEffects.None, 0f);
+
+        //draw 64x64 grid for debugging
     }
 }

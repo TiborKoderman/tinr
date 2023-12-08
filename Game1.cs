@@ -90,7 +90,7 @@ public class Game1 : Game
         scene1.Add(tile1);
 
         var tile2 = new Entity();
-        tile2.AddComponent(new EnvironmentComponent(new Vector2(0, -1), new Vector2(1, 0)));
+        tile2.AddComponent(new EnvironmentComponent(new Vector2(0, -1), new Vector2(3, 0)));
         scene1.Add(tile2);
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
