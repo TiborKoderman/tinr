@@ -29,7 +29,7 @@ public class Game1 : Game
     private CameraComponent _camera;
 
     public static Entity player;
-    public static SpriteFont font;    
+    public static SpriteFont font;
     // public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
     private bool gameOver = false;
 
@@ -66,8 +66,10 @@ public class Game1 : Game
 
 
         player = new Entity()
-        .AddComponent(new TransformComponent(){
-            position = new Vector2(0,0)})
+        .AddComponent(new TransformComponent()
+        {
+            position = new Vector2(0, 0)
+        })
         .AddComponent(new SpriteComponent(TextureManager.GetTexture("player")))
         .AddComponent(new KeyboardControllerComponent())
         .AddComponent(new CameraComponent())
@@ -76,11 +78,20 @@ public class Game1 : Game
 
 
         var enemy = new Entity();
-        enemy.AddComponent(new TransformComponent(){
-            position = new Vector2(32,32)})
+        enemy.AddComponent(new TransformComponent()
+        {
+            position = new Vector2(32, 32)
+        })
         .AddComponent(new SpriteComponent(TextureManager.GetTexture("enemy")))
         .AddComponent(new HealthComponent(100));
 
+        var tile1 = new Entity();
+        tile1.AddComponent(new EnvironmentComponent(new Vector2(0, 0), new Vector2(0, 0)));
+        scene1.Add(tile1);
+
+        var tile2 = new Entity();
+        tile2.AddComponent(new EnvironmentComponent(new Vector2(0, -1), new Vector2(1, 0)));
+        scene1.Add(tile2);
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
@@ -93,7 +104,7 @@ public class Game1 : Game
 
 
 
-        TransformSystem.Update(gameTime);
+        // TransformSystem.Update(gameTime);
         SpriteSystem.Update(gameTime);
         HealthSystem.Update(gameTime);
 
@@ -120,7 +131,7 @@ public class Game1 : Game
 
         // _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
         _spriteBatch.Begin(transformMatrix: _camera.Transform, samplerState: SamplerState.PointClamp);
-
+        EnvironmentSystem.Draw(_spriteBatch);
         spriteSystem.Draw(_spriteBatch);
         HealthSystem.Draw(_spriteBatch);
 
@@ -137,5 +148,6 @@ public class Game1 : Game
         TextureManager.AddTexture("enemy", "enemy/Enemies");
         TextureManager.AddTexture("bullet", "player/bullet_flying");
         TextureManager.AddTexture("healthbar", "ui/UIelements");
+        TextureManager.AddTexture("tiles", "map/Tileset");
     }
 }

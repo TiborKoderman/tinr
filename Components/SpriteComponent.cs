@@ -17,7 +17,7 @@ class SpriteComponent : Component
 
     public float firerate = 1; //bullets per second
 
-    public Nullable<float> lifeTime = null;
+    public float? lifeTime = null;
 
     public Rectangle rectangle
     {

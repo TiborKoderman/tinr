@@ -7,16 +7,11 @@ class EnvironmentSystem : BaseSystem<EnvironmentComponent>
     {
         
     }
-    public void Draw(SpriteBatch spriteBatch)
+    public static void Draw(SpriteBatch spriteBatch)
     {
         foreach (var component in components)
         {
             component.Draw(spriteBatch);
         }
     }
-
-    // public static void Unregister(EnvironmentComponent component)
-    // {
-    //     components.Remove(component);
-    // }
 }

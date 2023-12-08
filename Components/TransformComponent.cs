@@ -33,7 +33,7 @@ class TransformComponent : Component
 
     public TransformComponent()
     {
-        TransformSystem.Register(this);
+        // TransformSystem.Register(this);
     }
 
 }

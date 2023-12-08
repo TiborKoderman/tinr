@@ -31,6 +31,14 @@ public class Entity
         return this;
     }
 
+    // public Entity AddComponent(string componentName)
+    // {
+    //     var component = (Component)Activator.CreateInstance(Type.GetType("tinr." + componentName));
+    //     component.entity = this;
+    //     components.Add(component);
+    //     return this;
+    // }
+
     public T GetComponent<T>() where T : Component
     {
         foreach (var component in components)
