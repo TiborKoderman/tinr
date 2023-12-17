@@ -92,23 +92,8 @@ class SpriteComponent : Component
 
     public void AddBullet()
     {
-        var bullet = new Entity();
-        bullet.AddComponent(new TransformComponent()
-        {
-            // position = transform.position,
-            //offset the position to half the top edge of the sprite
-            position = transform.position + transform.direction * sourceRectangle.Height / 2,
-            rotation = transform.rotation
-        })
-        .AddComponent(new SpriteComponent(TextureManager.GetTexture("bullet")){
-            lifeTime = 3f})
-        .AddComponent(new HealthComponent(1))
-        .AddComponent(new BulletComponent());
-        var sprite = bullet.GetComponent<SpriteComponent>();
-        // set bullet velocity to forward at max speed
-        //transpose direction to bullet
-        sprite.velocity = transform.direction * sprite.maxVelocity * 3;
-        sprite.friction = 0f;
+        var bullet = new Bullet(transform.position, transform.rotation, transform, sourceRectangle);
+
 
         EntityManager.AddEntity(bullet);
     }

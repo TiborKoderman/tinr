@@ -1,16 +1,31 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 class ColliderSystem : BaseSystem<ColliderComponent>
 {
-    //check collisions efficiently and call the OnCollision method on the entity
-    // public static void Update(GameTime gameTime)
-    // {
+    //scan for collisions
+    public static void Scan()
+    {
+        foreach (var component in components)
+        {
+            foreach (var otherComponent in components)
+            {
+                if (component != otherComponent)
+                {
+                    if (component.hitbox.Intersects(otherComponent.hitbox))
+                    {
+                        component.OnCollision(otherComponent);
+                    }
+                }
+            }
+        }
+    }
 
-    // }
-
-
-    // private bool CheckCollision(ColliderComponent a, ColliderComponent b)
-    // {
-    //     return a.Collider.Intersects(b.Collider);
-    // }
+    public static void Draw(SpriteBatch spriteBatch)
+    {
+        foreach (var component in components)
+        {
+            component.Draw(spriteBatch);
+        }
+    }
 }

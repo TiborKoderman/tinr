@@ -23,4 +23,9 @@ class BaseSystem<T> where T : Component
             component.Update(gameTime);
         }
     }
+
+    public static void Cleanup()
+    {
+        components.Clear();
+    }
 }

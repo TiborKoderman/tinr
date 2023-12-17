@@ -1,6 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.2006663
 "/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0394487
+"/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.2180046
 "/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.2033118
 "/home/tibor/repos/tinr/Content/map/Tileset.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/map/Tileset.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0169249
 "/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0018479

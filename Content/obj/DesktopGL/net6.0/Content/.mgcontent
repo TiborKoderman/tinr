@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>/home/tibor/repos/tinr/Content/enemy/blood splatter.png</File>
     <File>/home/tibor/repos/tinr/Content/enemy/Enemies.png</File>
+    <File>/home/tibor/repos/tinr/Content/enemy/healthbar.png</File>
     <File>/home/tibor/repos/tinr/Content/fonts/File.spritefont</File>
     <File>/home/tibor/repos/tinr/Content/map/Tileset.png</File>
     <File>/home/tibor/repos/tinr/Content/player/ball.png</File>
@@ -16,6 +17,7 @@
     <File>/home/tibor/repos/tinr/Content/ui/UIelements.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>fonts/NotoSansMono.spritefont</File>

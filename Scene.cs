@@ -2,11 +2,11 @@ using tinr;
 
 public class Scene
 {
-    // public EntityManager _entityManager;
-    
+    Player player;
     public Scene()
     {
-        // _entityManager = new EntityManager();
+        player = new Player();
+        Add(player);
     }
 
     public virtual void Initialize()
@@ -14,8 +14,18 @@ public class Scene
         
     }
 
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
     public void Add(Entity entity)
     {
         EntityManager.AddEntity(entity);
+    }
+
+    ~Scene()
+    {
+        EntityManager.Clear();
     }
 }

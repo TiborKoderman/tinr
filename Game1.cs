@@ -19,6 +19,8 @@ public class Game1 : Game
 
     public static Scene scene1;
 
+
+    EnvironmentSystem environmentSystem;
     SpriteSystem spriteSystem;
 
     //default resolution is 1920x1080
@@ -49,49 +51,28 @@ public class Game1 : Game
     protected override void Initialize()
     {
         base.Initialize();
+        // EnvironmentSystem.GenerateEnvironment();
 
     }
 
     protected override void LoadContent()
     {
+        loadTextures();
+        font = Content.Load<SpriteFont>("fonts/NotoSansMono");
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         spriteSystem = new SpriteSystem();
 
-        scene1 = new Scene();
-
-        loadTextures();
-
-        font = Content.Load<SpriteFont>("fonts/NotoSansMono");
+        scene1 = new Scene1();
+        player = scene1.GetPlayer();
+        scene1.Initialize();
 
 
 
-        player = new Entity()
-        .AddComponent(new TransformComponent()
-        {
-            position = new Vector2(0, 0)
-        })
-        .AddComponent(new SpriteComponent(TextureManager.GetTexture("player")))
-        .AddComponent(new KeyboardControllerComponent())
-        .AddComponent(new CameraComponent())
-        .AddComponent(new HealthComponent(100));
-        scene1.Add(player);
 
 
-        var enemy = new Entity();
-        enemy.AddComponent(new TransformComponent()
-        {
-            position = new Vector2(32, 32)
-        })
-        .AddComponent(new SpriteComponent(TextureManager.GetTexture("enemy")))
-        .AddComponent(new HealthComponent(100));
 
-        var tile1 = new Entity();
-        tile1.AddComponent(new EnvironmentComponent(new Vector2(0, 0), new Vector2(0, 0)));
-        scene1.Add(tile1);
 
-        var tile2 = new Entity();
-        tile2.AddComponent(new EnvironmentComponent(new Vector2(0, -1), new Vector2(3, 0)));
-        scene1.Add(tile2);
+
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
@@ -107,21 +88,23 @@ public class Game1 : Game
         // TransformSystem.Update(gameTime);
         SpriteSystem.Update(gameTime);
         HealthSystem.Update(gameTime);
+        ColliderSystem.Update(gameTime);
+        ColliderSystem.Scan();
 
 
         _KBController.Update(gameTime);
         _camera.Update(gameTime);
 
-        // if(player.GetComponent<HealthComponent>().health <= 0)
-        // {
-        //     gameOver = true;
-        // }
+        if(player.GetComponent<HealthComponent>().health <= 0)
+        {
+            gameOver = true;
+        }
 
-        // if(gameOver == true)
-        // {
-        //     Console.WriteLine("Game Over");
-        //     Exit();
-        // }
+        if(gameOver == true)
+        {
+            Console.WriteLine("Game Over");
+            Exit();
+        }
         base.Update(gameTime);
     }
 
@@ -149,5 +132,6 @@ public class Game1 : Game
         TextureManager.AddTexture("bullet", "player/bullet_flying");
         TextureManager.AddTexture("healthbar", "ui/UIelements");
         TextureManager.AddTexture("tiles", "map/Tileset");
+        TextureManager.AddTexture("enemyHealthbar", "enemy/healthbar");
     }
 }

@@ -35,6 +35,17 @@ class EnvironmentComponent : Component
         _scale = new Vector2(8, 8);
         EnvironmentSystem.Register(this);
     }
+    public EnvironmentComponent(Vector2 position, Vector2 sourceCoords, int rotation)
+    {
+        _position = position*64*8;
+        //rotate by 90 degree increments
+        _rotation = rotation * (float)System.Math.PI / 2;
+        sourceRectangle = new Rectangle((int)sourceCoords.X*64, (int)sourceCoords.Y*64,64, 64);
+        _texture = TextureManager.GetTexture("tiles");
+        _origin = new Vector2(sourceRectangle.Width / 2, sourceRectangle.Height / 2);
+        _scale = new Vector2(8, 8);
+        EnvironmentSystem.Register(this);
+    }
 
     public void Draw(SpriteBatch spriteBatch)
     {

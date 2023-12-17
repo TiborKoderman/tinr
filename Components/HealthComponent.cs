@@ -56,9 +56,16 @@ class HealthComponent : Component
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        //draw health bar
-        // spriteBatch.Draw(TextureManager.GetTexture(), new Rectangle((int)entity.GetComponent<TransformComponent>().position.X, (int)entity.GetComponent<TransformComponent>().position.Y - 10, 64, 10), Color.White);
-        // spriteBatch.Draw(Game1.AssetManager.GetTexture("healthbar"), new Rectangle((int)entity.GetComponent<TransformComponent>().position.X, (int)entity.GetComponent<TransformComponent>().position.Y - 10, (int)(64 * ((float)health / (float)maxHealth)), 10), Color.Red);
+        if(entity.GetComponent<EnemyComponent>() == null)
+        {
+            return;
+        }
+        var transform = entity.GetComponent<TransformComponent>();
+        //draw full healthbar
+        spriteBatch.Draw(TextureManager.GetTexture("enemyHealthbar"), new Rectangle((int)transform.position.X-32, (int)transform.position.Y - 40, (int)(64 * ((float)health / (float)maxHealth)), 8), new Rectangle(0, 8, 64, 8), Color.White);
+        //draw empty healthbar
+        spriteBatch.Draw(TextureManager.GetTexture("enemyHealthbar"), new Rectangle((int)transform.position.X-32, (int)transform.position.Y - 40, 64, 8), new Rectangle(0, 0, 64, 8), Color.White);
+
     }
 
 }
