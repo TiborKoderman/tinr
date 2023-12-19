@@ -32,8 +32,12 @@ class ColliderComponent : Component
 
     public void OnCollision(ColliderComponent other)
     {
+        if(other == this.parent || other.children.Contains(this) || other.entity.children.Contains(this))
+        {
+            return;
+        }
         Console.WriteLine("Collision");
-        entity.GetComponent<HealthComponent>().Damage(10);
+        // entity.GetComponent<HealthComponent>().Damage(10);
     }
 
     public void Draw(SpriteBatch spriteBatch)

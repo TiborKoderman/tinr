@@ -19,6 +19,8 @@ class SpriteComponent : Component
 
     public float? lifeTime = null;
 
+    
+
     public Rectangle rectangle
     {
         get
@@ -92,8 +94,16 @@ class SpriteComponent : Component
 
     public void AddBullet()
     {
-        var bullet = new Bullet(transform.position, transform.rotation, transform, sourceRectangle);
+        var bullet = new Bullet(transform, sourceRectangle, ref entity);
+        children.Add(bullet);
 
+        EntityManager.AddEntity(bullet);
+    }
+
+    public void AddBullet(float rotation)
+    {
+        var bullet = new Bullet(transform, sourceRectangle, ref entity, rotation);
+        children.Add(bullet);
 
         EntityManager.AddEntity(bullet);
     }

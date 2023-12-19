@@ -90,7 +90,7 @@ public class Game1 : Game
         HealthSystem.Update(gameTime);
         ColliderSystem.Update(gameTime);
         ColliderSystem.Scan();
-        AiSystem.Update(gameTime);
+        DemonAiSystem.Update(gameTime);
 
 
         _KBController.Update(gameTime);

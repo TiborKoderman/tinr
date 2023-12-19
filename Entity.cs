@@ -10,9 +10,10 @@ public class Entity
 
     public List<Component> components = new();
 
-    public List<Entity> children = new();
+    // public Dictionary<int, Entity> children = new Dictionary<int, Entity>();
+    public List<Entity> children = new List<Entity>();
 
-    public Entity parent;
+    public Entity parent = null;
 
     public float lifeSpan = 0f;
 

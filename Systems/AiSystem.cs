@@ -1,4 +1,0 @@
-class AiSystem : BaseSystem<AiComponent>
-{
-    
-}

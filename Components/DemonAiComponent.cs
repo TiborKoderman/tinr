@@ -2,23 +2,38 @@ using System;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using tinr;
-class DemonAiComponent : AiComponent
+class DemonAiComponent : Component
 {
+    protected static Random random = new Random();
+    public enum State
+    {
+        Idle,
+        Moving,
+        Chasing,
+        Attacking,
+    }
+
+    public State state;
+
+    public float detectionRadius { get; set; }
+    public float attackRadius { get; set; }
     TransformComponent transform;
     SpriteComponent sprite;
     public Entity player;
 
     Vector2 nextTile;
+    private TimeSpan lastBulletTime;
+    private int firerate;
 
     public DemonAiComponent()
     {
         state = State.Idle;
-        detectionRadius = 400;
-        attackRadius = 100;
+        detectionRadius = 300;
+        attackRadius = 200;
 
         player = EntityManager.GetEntityOfType<Player>();
 
-        AiSystem.Register(this);
+        DemonAiSystem.Register(this);
     }
 
 
@@ -26,6 +41,7 @@ class DemonAiComponent : AiComponent
     {
         transform = entity.GetComponent<TransformComponent>();
         sprite = entity.GetComponent<SpriteComponent>();
+
 
         switch (state)
         {
@@ -70,6 +86,7 @@ class DemonAiComponent : AiComponent
                 if (Vector2.Distance(transform.position, player.GetComponent<TransformComponent>().position) < attackRadius)
                 {
                     state = State.Attacking;
+                    //rotate towards player
                 }
                 else
                 {
@@ -88,9 +105,18 @@ class DemonAiComponent : AiComponent
                 else
                 {
                     //attack player
-                    sprite.firerate = 0.5f;
-                    // sprite.AddBullet();
-                    Console.WriteLine("Attack");
+                    //rotate towards player
+                    // float angle = (float)Math.Atan2(player.GetComponent<TransformComponent>().position.Y - transform.position.Y, player.GetComponent<TransformComponent>().position.X - transform.position.X);
+                    Vector2 direction = player.GetComponent<TransformComponent>().position - transform.position;
+                    // direction.Normalize();
+                    float rotation = (float)Math.Atan2(direction.Y, direction.X) + (float)Math.PI / 2;
+                    if (gameTime.TotalGameTime - lastBulletTime > TimeSpan.FromSeconds(1 / sprite.firerate))
+                    {
+                        sprite.AddBullet(rotation);
+                        // Console.WriteLine("*bang*");
+                        lastBulletTime = gameTime.TotalGameTime;
+                    }
+                    Console.WriteLine("Attacking");
                 }
                 break;
         }

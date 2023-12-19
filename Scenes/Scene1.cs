@@ -9,7 +9,7 @@ class Scene1 : Scene
 
     public override void Initialize()
     {
-        Add(new Demon());
+        // Add(new Demon());
 
         Add(new Demon(new Vector2(0,-600)));
 
