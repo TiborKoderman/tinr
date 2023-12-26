@@ -13,7 +13,7 @@ class UI
         healthComponent = player.GetComponent<HealthComponent>();
         if (healthComponent != null)
         {
-            _spriteBatch.DrawString(Game1.font, "Health: " + healthComponent.health, new Microsoft.Xna.Framework.Vector2(10, 10), Color.White);
+            _spriteBatch.DrawString(TextureManager.GetFont("NotoSansMono"), "Health: " + healthComponent.health, new Vector2(10, 10), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
             // Console.WriteLine("Health: " + healthComponent.health);
         }
         _spriteBatch.End();

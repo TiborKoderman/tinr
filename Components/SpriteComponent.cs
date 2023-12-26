@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Graphics;
 using tinr;
 class SpriteComponent : Component
 {
-    public string _textureName;
     public Texture2D _texture;
     public TransformComponent transform;
     public Rectangle sourceRectangle;

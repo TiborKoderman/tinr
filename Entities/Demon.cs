@@ -19,6 +19,6 @@ public class Demon : Entity
         AddComponent(new EnemyComponent());
         AddComponent(new HealthComponent(100));
         AddComponent(new ColliderComponent() { hitboxNormalised = new Rectangle(0, 0, 64, 64) });
-        AddComponent(new DemonAiComponent());
+        // AddComponent(new DemonAiComponent());
     }
 }
