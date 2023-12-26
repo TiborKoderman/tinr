@@ -1,12 +1,13 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.1766645
-"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0220389
-"/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.0010397
-"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.1559683
-"/home/tibor/repos/tinr/Content/map/Tileset.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Tileset.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0222876
-"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0010536
-"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",447,16469,0.0010032
-"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0015918
-"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0359529
-"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0015734
-"/home/tibor/repos/tinr/Content/ui/UIelements.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/UIelements.xnb","TextureProcessor","Texture2DContent",2011,1048661,0.0302553
+"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.1783624
+"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0214708
+"/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.0009501
+"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.1188188
+"/home/tibor/repos/tinr/Content/map/Tileset.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Tileset.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0134427
+"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0012617
+"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",447,16469,0.0009848
+"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0016464
+"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0043818
+"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0008947
+"/home/tibor/repos/tinr/Content/ui/menu_item.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/menu_item.xnb","TextureProcessor","Texture2DContent",357,65621,0.0041317
+"/home/tibor/repos/tinr/Content/ui/UIelements.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/UIelements.xnb","TextureProcessor","Texture2DContent",2011,1048661,0.0305915
