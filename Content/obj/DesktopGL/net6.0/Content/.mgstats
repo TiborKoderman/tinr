@@ -9,4 +9,5 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0104654
 "/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0256577
 "/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0009466
+"/home/tibor/repos/tinr/Content/ui/menu_item.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/ui/menu_item.xnb","TextureProcessor","Texture2DContent",357,65621,0.2021677
 "/home/tibor/repos/tinr/Content/ui/UIelements.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/ui/UIelements.xnb","TextureProcessor","Texture2DContent",2011,1048661,0.0298933

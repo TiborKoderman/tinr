@@ -9,6 +9,7 @@ public class Player : Entity
         AddComponent(new TransformComponent() { position = new Vector2(0, 0) });
         AddComponent(new SpriteComponent(TextureManager.GetTexture("player")));
         AddComponent(new KeyboardControllerComponent());
+        AddComponent(new GamepadControllerComponent());
         AddComponent(new CameraComponent());
         AddComponent(new HealthComponent(100));
 

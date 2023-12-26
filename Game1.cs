@@ -28,6 +28,7 @@ public class Game1 : Game
     public static int ScreenWidth = 1920 / 2;
 
     private KeyboardControllerComponent _KBController;
+    private GamepadControllerComponent _GPController;
     private CameraComponent _camera;
 
     public static Entity player;
@@ -67,6 +68,22 @@ public class Game1 : Game
         scene1.Initialize();
 
 
+        var button = new Button(TextureManager.GetTexture("menu_item"), font)
+        {
+            Position = new Vector2(100, 100),
+            Text = "Click Me",
+        };
+
+        button.Click += Button_Click;
+
+        var quitButton = new Button(TextureManager.GetTexture("menu_item"), font)
+        {
+            Position = new Vector2(100, 200),
+            Text = "Quit",
+        };
+
+        scene1.Add(button);
+        scene1.Add(quitButton);
 
 
 
@@ -75,7 +92,19 @@ public class Game1 : Game
 
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
+        _GPController = player.GetComponent<GamepadControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
+    }
+
+    private void Button_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Button Clicked");
+    }
+
+    private void QuitButton_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("Quit Button Clicked");
+        Exit();
     }
 
     protected override void Update(GameTime gameTime)
@@ -91,17 +120,22 @@ public class Game1 : Game
         ColliderSystem.Update(gameTime);
         ColliderSystem.Scan();
         DemonAiSystem.Update(gameTime);
+        ButtonSystem.Update(gameTime);
 
 
         _KBController.Update(gameTime);
+        _GPController.Update(gameTime);
+
+
+
         _camera.Update(gameTime);
 
-        if(player.GetComponent<HealthComponent>().health <= 0)
+        if (player.GetComponent<HealthComponent>().health <= 0)
         {
             gameOver = true;
         }
 
-        if(gameOver == true)
+        if (gameOver == true)
         {
             Console.WriteLine("Game Over");
             Exit();
@@ -124,6 +158,11 @@ public class Game1 : Game
         //draw the UI
         UI.drawIngameUI(_spriteBatch, player);
 
+        //draw the buttons
+        _spriteBatch.Begin();
+        ButtonSystem.Draw(_spriteBatch);
+        _spriteBatch.End();
+
         base.Draw(gameTime);
     }
     private void loadTextures()
@@ -134,5 +173,6 @@ public class Game1 : Game
         TextureManager.AddTexture("healthbar", "ui/UIelements");
         TextureManager.AddTexture("tiles", "map/Tileset");
         TextureManager.AddTexture("enemyHealthbar", "enemy/healthbar");
+        TextureManager.AddTexture("menu_item", "ui/menu_item");
     }
 }

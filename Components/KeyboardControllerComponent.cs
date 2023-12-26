@@ -12,6 +12,7 @@ class KeyboardControllerComponent : Component
 
     private TimeSpan lastBulletTime = TimeSpan.Zero;
 
+
     public KeyboardControllerComponent()
     {
         lastBulletTime = TimeSpan.Zero;
@@ -23,6 +24,8 @@ class KeyboardControllerComponent : Component
         TransformComponent transform = entity.GetComponent<TransformComponent>();
 
         SpriteComponent sprite = entity.GetComponent<SpriteComponent>();
+
+        GamePadState currentState = GamePad.GetState(PlayerIndex.One);
 
 
         float firerate = sprite.firerate;
@@ -70,6 +73,10 @@ class KeyboardControllerComponent : Component
 
             // apply velocity
             transform.position += sprite.velocity;
+
+
+            //disable mouse if the latest input was from a gamepad
+                // return;
 
             //get angle from center of screen to mouse in radians
             var mousePosition = Mouse.GetState().Position.ToVector2();

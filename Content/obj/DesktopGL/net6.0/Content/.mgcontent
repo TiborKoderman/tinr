@@ -14,6 +14,7 @@
     <File>/home/tibor/repos/tinr/Content/player/Player.png</File>
     <File>/home/tibor/repos/tinr/Content/player/sword slash.png</File>
     <File>/home/tibor/repos/tinr/Content/sprites/bullet_flying.png</File>
+    <File>/home/tibor/repos/tinr/Content/ui/menu_item.png</File>
     <File>/home/tibor/repos/tinr/Content/ui/UIelements.png</File>
   </SourceFiles>
   <DestFiles>
@@ -21,6 +22,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>fonts/NotoSansMono.spritefont</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
