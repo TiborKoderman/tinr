@@ -21,7 +21,7 @@ public class GameState : State
     #endregion
 
 
-    public static Entity player;
+    public Entity player;
     public static Scene scene1;
     private bool gameOver = false;
 
@@ -38,6 +38,8 @@ public class GameState : State
         _KBController = player.GetComponent<KeyboardControllerComponent>();
         _GPController = player.GetComponent<GamepadControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
+
+
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -85,7 +87,8 @@ public class GameState : State
         if (gameOver == true)
         {
             Console.WriteLine("Game Over");
-            _game.Exit();
+            // _game.Exit();
+            _game.ChangeState(new EndgameMenuState(_game, _graphicsDevice, _content, this));
         }
     }
 

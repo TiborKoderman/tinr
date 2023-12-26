@@ -38,6 +38,7 @@ public class MenuState : State
 
         newGameButton.Click += NewGameButton_Click;
         leaderboardButton.Click += LeaderboardButton_Click;
+        exitGameButton.Click += ExitGameButton_Click;
 
         _components = new List<Button>()
         {
@@ -52,25 +53,8 @@ public class MenuState : State
         //GET leaderboard from https://decent.koderverse.com/leaderboard as JSON
         //parse JSON into a list of leaderboard entries
         //display leaderboard entries
-        using (HttpClient client = new HttpClient())
-    {
-        try
-        {
-            string url = "https://decent.koderverse.com/leaderboard";
-            HttpResponseMessage response = await client.GetAsync(url);
-            response.EnsureSuccessStatusCode(); // Throw if not a success code.
+        _game.ChangeState(new LeaderboardMenuState(_game, _graphicsDevice, _content));
 
-            string responseBody = await response.Content.ReadAsStringAsync();
-
-            // Parse JSON into a list of leaderboard entries
-            // Display leaderboard entries
-        }
-        catch (HttpRequestException ex)
-        {
-            // Handle exception
-            Console.WriteLine($"Request exception: {ex.Message}");
-        }
-    }
 
 
     }
@@ -83,7 +67,7 @@ public class MenuState : State
 
     private void ExitGameButton_Click(object sender, System.EventArgs e)
     {
-        _game.Exit();
+        _game.exit_game();
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

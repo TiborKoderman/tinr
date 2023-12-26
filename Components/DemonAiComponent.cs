@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using tinr;
 class DemonAiComponent : Component
 {
-    protected static Random random = new Random();
+    protected static Random random = new();
     public enum State
     {
         Idle,

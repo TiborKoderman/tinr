@@ -4,6 +4,8 @@ using tinr;
 
 public class Player : Entity
 {
+
+
     public Player()
     {
         AddComponent(new TransformComponent() { position = new Vector2(0, 0) });
@@ -12,6 +14,7 @@ public class Player : Entity
         AddComponent(new GamepadControllerComponent());
         AddComponent(new CameraComponent());
         AddComponent(new HealthComponent(100));
+        AddComponent(new ScoreComponent());
 
         GetComponent<SpriteComponent>().firerate = 2f;
     }

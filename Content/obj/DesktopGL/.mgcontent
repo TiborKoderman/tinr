@@ -15,7 +15,7 @@
     <File>/home/tibor/repos/tinr/Content/player/sword slash.png</File>
     <File>/home/tibor/repos/tinr/Content/sprites/bullet_flying.png</File>
     <File>/home/tibor/repos/tinr/Content/ui/menu_item.png</File>
-    <File>/home/tibor/repos/tinr/Content/ui/UIelements.png</File>
+    <File>/home/tibor/repos/tinr/Content/ui/ui_elements.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

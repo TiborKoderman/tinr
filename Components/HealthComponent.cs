@@ -45,10 +45,24 @@ class HealthComponent : Component
             Destroy();
         }
 
+        //add 10 damage every second
+        if (gameTime.TotalGameTime - lastDamageTime > TimeSpan.FromSeconds(1))
+        {
+            Damage(10);
+            lastDamageTime = gameTime.TotalGameTime;
+        }
+
     }
 
     public void Destroy()
     {
+        //if entity is of type enemy, add score
+        if (entity.GetComponent<EnemyComponent>() != null)
+        {
+            var score = EntityManager.GetEntityOfType<Player>().GetComponent<ScoreComponent>();
+            score.addScore(10);
+        }
+
         EntityManager.RemoveEntity(entity);
         // isRemoved = true;
 

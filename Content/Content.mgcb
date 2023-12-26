@@ -140,7 +140,7 @@
 /processorParam:TextureFormat=Color
 /build:ui/menu_item.png
 
-#begin ui/UIelements.png
+#begin ui/ui_elements.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -150,5 +150,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ui/UIelements.png
+/build:ui/ui_elements.png
 

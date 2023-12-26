@@ -17,7 +17,6 @@ class EnvironmentComponent : Component
 
     // private Vector2 velocity = Vector2.Zero;
 
-    private bool debug = true;
     
     public Rectangle sourceRectangle;
 

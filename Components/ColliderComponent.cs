@@ -37,7 +37,7 @@ class ColliderComponent : Component
             return;
         }
         Console.WriteLine("Collision");
-        // entity.GetComponent<HealthComponent>().Damage(10);
+        entity.GetComponent<HealthComponent>().Damage(10);
     }
 
     public void Draw(SpriteBatch spriteBatch)

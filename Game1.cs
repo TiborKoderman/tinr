@@ -11,6 +11,11 @@ public class Game1 : Game
     public GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    public void exit_game()
+    {
+        Exit();
+    }
+
 
     private State _currentState;
     private State _nextState;
@@ -87,7 +92,7 @@ public class Game1 : Game
         TextureManager.AddTexture("player", "player/Player");
         TextureManager.AddTexture("enemy", "enemy/Enemies");
         TextureManager.AddTexture("bullet", "player/bullet_flying");
-        TextureManager.AddTexture("healthbar", "ui/UIelements");
+        TextureManager.AddTexture("ui_elements", "ui/ui_elements");
         TextureManager.AddTexture("tiles", "map/Tileset");
         TextureManager.AddTexture("enemyHealthbar", "enemy/healthbar");
         TextureManager.AddTexture("menu_item", "ui/menu_item");
