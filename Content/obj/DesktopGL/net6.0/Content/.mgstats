@@ -1,4 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/tibor/repos/tinr/Content/audio/demon_death.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/audio/demon_death.xnb","SoundEffectProcessor","SoundEffectContent",264378,264439,0.1697133
+"/home/tibor/repos/tinr/Content/audio/gunshot.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/audio/gunshot.xnb","SoundEffectProcessor","SoundEffectContent",20022,20083,0.0097901
+"/home/tibor/repos/tinr/Content/audio/rclick.mp3","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/audio/rclick.xnb","SoundEffectProcessor","SoundEffectContent",13374,73833,0.1536566
 "/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.2006663
 "/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0394487
 "/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/Content/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.2180046

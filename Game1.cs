@@ -96,5 +96,8 @@ public class Game1 : Game
         TextureManager.AddTexture("tiles", "map/Tileset");
         TextureManager.AddTexture("enemyHealthbar", "enemy/healthbar");
         TextureManager.AddTexture("menu_item", "ui/menu_item");
+        TextureManager.AddSound("click", "audio/rclick");
+        TextureManager.AddSound("gunshot", "audio/gunshot");
+        TextureManager.AddSound("demon_death", "audio/demon_death");
     }
 }

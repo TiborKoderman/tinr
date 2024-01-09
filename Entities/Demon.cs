@@ -17,7 +17,7 @@ public class Demon : Entity
         AddComponent(new TransformComponent() { position = position });
         AddComponent(new SpriteComponent(TextureManager.GetTexture("enemy")));
         AddComponent(new EnemyComponent());
-        AddComponent(new HealthComponent(100));
+        AddComponent(new HealthComponent(100){deathSound = TextureManager.GetSound("demon_death")});
         AddComponent(new ColliderComponent() { hitboxNormalised = new Rectangle(0, 0, 64, 64) });
         // AddComponent(new DemonAiComponent());
     }

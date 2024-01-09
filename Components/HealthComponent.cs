@@ -1,10 +1,13 @@
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using tinr;
 class HealthComponent : Component
 {
     public int health { get; set; }
+
+    public SoundEffect deathSound { get; set; }
 
 
     public int maxHealth
@@ -46,11 +49,11 @@ class HealthComponent : Component
         }
 
         //add 10 damage every second
-        if (gameTime.TotalGameTime - lastDamageTime > TimeSpan.FromSeconds(1))
-        {
-            Damage(10);
-            lastDamageTime = gameTime.TotalGameTime;
-        }
+        // if (gameTime.TotalGameTime - lastDamageTime > TimeSpan.FromSeconds(1))
+        // {
+        //     Damage(10);
+        //     lastDamageTime = gameTime.TotalGameTime;
+        // }
 
     }
 
@@ -61,6 +64,11 @@ class HealthComponent : Component
         {
             var score = EntityManager.GetEntityOfType<Player>().GetComponent<ScoreComponent>();
             score.addScore(10);
+        }
+
+        if(deathSound != null)
+        {
+            deathSound.Play();
         }
 
         EntityManager.RemoveEntity(entity);

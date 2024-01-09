@@ -35,6 +35,7 @@ class Bullet : Entity
         sprite.maxVelocity = 15;
         sprite.velocity = direction * sprite.maxVelocity * 3;
         sprite.friction = 0f;
+        TextureManager.GetSound("gunshot").Play();
     }
 
     ~Bullet()

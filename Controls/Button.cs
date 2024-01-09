@@ -80,6 +80,9 @@ public class Button : Component
             if (_currentMouse.LeftButton == ButtonState.Released && _previousMouse.LeftButton == ButtonState.Pressed)
             {
                 Click?.Invoke(this, new EventArgs());
+                //play click sound
+                TextureManager.GetSound("click").Play();
+                
             }
         }
     }
