@@ -4,6 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/home/tibor/repos/tinr/Content/audio/demon_death.wav</File>
+    <File>/home/tibor/repos/tinr/Content/audio/gunshot.wav</File>
+    <File>/home/tibor/repos/tinr/Content/audio/rclick.mp3</File>
     <File>/home/tibor/repos/tinr/Content/enemy/blood splatter.png</File>
     <File>/home/tibor/repos/tinr/Content/enemy/Enemies.png</File>
     <File>/home/tibor/repos/tinr/Content/enemy/healthbar.png</File>
@@ -18,6 +21,9 @@
     <File>/home/tibor/repos/tinr/Content/ui/ui_elements.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
