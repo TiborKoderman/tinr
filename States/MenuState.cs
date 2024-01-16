@@ -29,21 +29,30 @@ public class MenuState : State
             Text = "Leaderboard",
         };
 
-        var exitGameButton = new Button(buttonTexture, buttonFont)
+        var settingsButton = new Button(buttonTexture, buttonFont)
         {
             //center the button
             Position = new Vector2((Game1.game.GraphicsDevice.Viewport.Width / 2) - (buttonTexture.Width / 2), (Game1.game.GraphicsDevice.Viewport.Height / 2) - (buttonTexture.Height / 2) + 100),
+            Text = "Settings",
+        };
+
+        var exitGameButton = new Button(buttonTexture, buttonFont)
+        {
+            //center the button
+            Position = new Vector2((Game1.game.GraphicsDevice.Viewport.Width / 2) - (buttonTexture.Width / 2), (Game1.game.GraphicsDevice.Viewport.Height / 2) - (buttonTexture.Height / 2) + 200),
             Text = "Exit Game",
         };
 
         newGameButton.Click += NewGameButton_Click;
         leaderboardButton.Click += LeaderboardButton_Click;
         exitGameButton.Click += ExitGameButton_Click;
+        settingsButton.Click += SettingsButton_Click;
 
         _components = new List<Button>()
         {
             newGameButton,
             leaderboardButton,
+            settingsButton,
             exitGameButton,
         };
     }
@@ -54,9 +63,11 @@ public class MenuState : State
         //parse JSON into a list of leaderboard entries
         //display leaderboard entries
         _game.ChangeState(new LeaderboardMenuState(_game, _graphicsDevice, _content));
+    }
 
-
-
+    private void SettingsButton_Click(object sender, System.EventArgs e)
+    {
+        _game.ChangeState(new SettingsMenuState(_game, _graphicsDevice, _content));
     }
 
     private void NewGameButton_Click(object sender, System.EventArgs e)

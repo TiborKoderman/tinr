@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.IO;
+using System.IO.IsolatedStorage;
+using System.Text.Json;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -50,6 +54,28 @@ public class Game1 : Game
         base.Initialize();
         // EnvironmentSystem.GenerateEnvironment();
 
+
+        using (IsolatedStorageFile storage = IsolatedStorageFile.GetUserStoreForApplication())
+        {
+            if (!storage.FileExists("settings.json"))
+            {
+                // Create a new settings object with default values
+                GameSettings defaultSettings = new GameSettings { muted = false, volume = 50 };
+
+                // Serialize the settings object to a JSON string
+                string json = JsonSerializer.Serialize(defaultSettings);
+
+                // Write the JSON string to a new file
+                using (IsolatedStorageFileStream stream = storage.CreateFile("settings.json"))
+                {
+                    using (StreamWriter writer = new StreamWriter(stream))
+                    {
+                        writer.Write(json);
+                    }
+                }
+            }
+        }
+
     }
 
     protected override void LoadContent()
@@ -66,7 +92,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        if(_nextState != null)
+        if (_nextState != null)
         {
             _currentState = _nextState;
             _nextState = null;
