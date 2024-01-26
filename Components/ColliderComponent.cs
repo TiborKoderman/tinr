@@ -1,23 +1,30 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using tinr;
+
 class ColliderComponent : Component
 {
     public bool isTrigger = false;
     public Rectangle hitboxNormalised = new Rectangle(0, 0, 64, 64);
-    TransformComponent transform;
+    private TransformComponent transform;
 
-    public Rectangle hitbox
+    public BoundingBox bounds
     {
         get
         {
-            return new Rectangle((int)transform.position.X, (int)transform.position.Y, hitboxNormalised.Width, hitboxNormalised.Height);
+            transform = entity.GetComponent<TransformComponent>();
+            int centerX = (int)transform.position.X - hitboxNormalised.Width / 2;
+            int centerY = (int)transform.position.Y - hitboxNormalised.Height / 2;
+            return new BoundingBox(new Vector3(centerX, centerY, 0), new Vector3(centerX + hitboxNormalised.Width, centerY + hitboxNormalised.Height, 0));
         }
         set
         {
         }
     }
+
+
 
     public ColliderComponent()
     {
@@ -26,13 +33,12 @@ class ColliderComponent : Component
 
     public override void Update(GameTime gameTime)
     {
-        transform = entity.GetComponent<TransformComponent>();
-
+        // transform = entity.GetComponent<TransformComponent>();
     }
 
     public void OnCollision(ColliderComponent other)
     {
-        if(other == this.parent || other.children.Contains(this) || other.entity.children.Contains(this))
+        if (other == this.parent || other.children.Contains(this) || other.entity.children.Contains(this))
         {
             return;
         }
@@ -40,11 +46,22 @@ class ColliderComponent : Component
         entity.GetComponent<HealthComponent>().Damage(10);
     }
 
+    // Draw the hitbox at the center of the entity
     public void Draw(SpriteBatch spriteBatch)
     {
-        var texture = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
-        texture.SetData(new[] { Color.White });
+        Texture2D hitboxTexture = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
+        hitboxTexture.SetData(new[] { Color.Red * 0.5f });
 
-        spriteBatch.Draw(texture, hitbox, Color.Red);
+        //draw the bounding box
+        BoundingBox box = bounds;
+        Vector3[] corners = box.GetCorners();
+        for (int i = 0; i < 4; i++)
+        {
+            Vector3 corner1 = corners[i];
+            Vector3 corner2 = corners[(i + 1) % 4];
+            spriteBatch.Draw(hitboxTexture, new Rectangle((int)corner1.X, (int)corner1.Y, (int)(corner2 - corner1).Length(), 1), null, Color.White, (float)Math.Atan2(corner2.Y - corner1.Y, corner2.X - corner1.X), Vector2.Zero, SpriteEffects.None, 0);
+        }
+
+
     }
 }

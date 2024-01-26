@@ -3,14 +3,24 @@ using Microsoft.Xna.Framework.Graphics;
 
 class SpriteSystem : BaseSystem<SpriteComponent>
 {
-    public void Draw(SpriteBatch spriteBatch){
+    // private Player _player;
+
+    CameraComponent _camera;
+
+    public SpriteSystem()
+    {
+        // _camera = player.GetComponent<CameraComponent>();
+
+    }
+    public void Draw(SpriteBatch spriteBatch)
+    {
         foreach (var component in components)
         {
             component.Draw(spriteBatch);
         }
     }
 
-    //     public static void Unregister(SpriteComponent component)
+    // public static void Unregister(SpriteComponent component)
     // {
     //     components.Remove(component);
     // }

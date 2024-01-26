@@ -22,11 +22,11 @@ class Bullet : Entity
             
             position = transform.position + direction * sourceRectangle.Height / 2,
             rotation = rotation??transform.rotation,
-        })
-        .AddComponent(new SpriteComponent(TextureManager.GetTexture("bullet")){
-            lifeTime = 3f})
-        .AddComponent(new HealthComponent(1))
-        .AddComponent(new ColliderComponent(){
+        });
+        AddComponent(new SpriteComponent(TextureManager.GetTexture("bullet")){
+            lifeTime = 3f});
+        AddComponent(new HealthComponent(1));
+        AddComponent(new ColliderComponent(){
             hitboxNormalised = new Rectangle(0,0,sourceRectangle.Width,sourceRectangle.Height)
         });
         var sprite = GetComponent<SpriteComponent>();
