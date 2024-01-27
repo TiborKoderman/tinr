@@ -95,13 +95,13 @@ class EnvironmentComponent : Component
 
 
         //draw the 64x64 grid
-        Texture2D gridTexture = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
-        gridTexture.SetData(new[] { Color.White * 0.5f });
-        for (int i = 0; i < 8; i++)
-        {
-            spriteBatch.Draw(gridTexture, new Rectangle((int)_position.X + i * 64, (int)_position.Y, 1, 64 * 8), Color.White);
-            spriteBatch.Draw(gridTexture, new Rectangle((int)_position.X, (int)_position.Y + i * 64, 64 * 8, 1), Color.White);
-        }
+        // Texture2D gridTexture = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
+        // gridTexture.SetData(new[] { Color.White * 0.5f });
+        // for (int i = 0; i < 8; i++)
+        // {
+        //     spriteBatch.Draw(gridTexture, new Rectangle((int)_position.X + i * 64, (int)_position.Y, 1, 64 * 8), Color.White);
+        //     spriteBatch.Draw(gridTexture, new Rectangle((int)_position.X, (int)_position.Y + i * 64, 64 * 8, 1), Color.White);
+        // }
 
     }
 }

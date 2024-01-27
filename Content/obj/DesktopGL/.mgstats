@@ -1,16 +1,16 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/tibor/repos/tinr/Content/audio/demon_death.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/demon_death.xnb","SoundEffectProcessor","SoundEffectContent",264378,264439,0.2266588
-"/home/tibor/repos/tinr/Content/audio/gunshot.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/gunshot.xnb","SoundEffectProcessor","SoundEffectContent",20022,20083,0.0104044
-"/home/tibor/repos/tinr/Content/audio/rclick.mp3","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/rclick.xnb","SoundEffectProcessor","SoundEffectContent",13374,73833,0.0231349
-"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.0425725
-"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0305122
-"/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.0013369
-"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.1418548
-"/home/tibor/repos/tinr/Content/map/Tileset.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Tileset.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0143147
-"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0011445
-"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",447,16469,0.0008999
-"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0019158
-"/home/tibor/repos/tinr/Content/player/sword slash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/sword slash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0038575
-"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0009582
-"/home/tibor/repos/tinr/Content/ui/menu_item.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/menu_item.xnb","TextureProcessor","Texture2DContent",357,65621,0.0040431
-"/home/tibor/repos/tinr/Content/ui/ui_elements.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/ui_elements.xnb","TextureProcessor","Texture2DContent",2119,1048661,0.0283866
+"/home/tibor/repos/tinr/Content/audio/demon_death.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/demon_death.xnb","SoundEffectProcessor","SoundEffectContent",264378,264439,0.3452523
+"/home/tibor/repos/tinr/Content/audio/gunshot.wav","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/gunshot.xnb","SoundEffectProcessor","SoundEffectContent",20022,20083,0.020146
+"/home/tibor/repos/tinr/Content/audio/rclick.mp3","/home/tibor/repos/tinr/Content/bin/DesktopGL/audio/rclick.xnb","SoundEffectProcessor","SoundEffectContent",13374,73833,0.0338119
+"/home/tibor/repos/tinr/Content/enemy/blood splatter.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/blood splatter.xnb","TextureProcessor","Texture2DContent",912,16469,0.0659814
+"/home/tibor/repos/tinr/Content/enemy/Enemies.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/Enemies.xnb","TextureProcessor","Texture2DContent",16180,786517,0.0513685
+"/home/tibor/repos/tinr/Content/enemy/healthbar.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/enemy/healthbar.xnb","TextureProcessor","Texture2DContent",428,16469,0.0037967
+"/home/tibor/repos/tinr/Content/fonts/File.spritefont","/home/tibor/repos/tinr/Content/bin/DesktopGL/fonts/NotoSansMono.xnb","FontDescriptionProcessor","SpriteFontContent",2017,21535,0.2439852
+"/home/tibor/repos/tinr/Content/map/Tileset.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/map/Tileset.xnb","TextureProcessor","Texture2DContent",1911,409685,0.0155007
+"/home/tibor/repos/tinr/Content/player/ball.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/ball.xnb","TextureProcessor","Texture2DContent",8882,16469,0.0013793
+"/home/tibor/repos/tinr/Content/player/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/bullet_flying.xnb","TextureProcessor","Texture2DContent",447,16469,0.0010861
+"/home/tibor/repos/tinr/Content/player/Player.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/Player.xnb","TextureProcessor","Texture2DContent",1739,49237,0.0017433
+"/home/tibor/repos/tinr/Content/player/swordslash.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/player/swordslash.xnb","TextureProcessor","Texture2DContent",2154,131157,0.0051515
+"/home/tibor/repos/tinr/Content/sprites/bullet_flying.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/sprites/bullet_flying.xnb","TextureProcessor","Texture2DContent",262,16469,0.0012994
+"/home/tibor/repos/tinr/Content/ui/menu_item.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/menu_item.xnb","TextureProcessor","Texture2DContent",357,65621,0.0059243
+"/home/tibor/repos/tinr/Content/ui/ui_elements.png","/home/tibor/repos/tinr/Content/bin/DesktopGL/ui/ui_elements.xnb","TextureProcessor","Texture2DContent",2119,1048661,0.0363723

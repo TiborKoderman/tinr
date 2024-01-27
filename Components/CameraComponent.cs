@@ -4,6 +4,12 @@ class CameraComponent : Component
 {
     public Matrix Transform { get; private set; }
 
+    public Rectangle GetRectangle()
+    {
+        var target = entity.GetComponent<SpriteComponent>();
+        return new Rectangle((int)target.transform.position.X, (int)target.transform.position.Y, Game1.ScreenWidth, Game1.ScreenHeight);
+    }
+
     public override void Update(GameTime gameTime)
     {
         var target = entity.GetComponent<SpriteComponent>();

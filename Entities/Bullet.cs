@@ -26,9 +26,7 @@ class Bullet : Entity
         AddComponent(new SpriteComponent(TextureManager.GetTexture("bullet")){
             lifeTime = 3f});
         AddComponent(new HealthComponent(1));
-        AddComponent(new ColliderComponent(){
-            hitboxNormalised = new Rectangle(0,0,sourceRectangle.Width,sourceRectangle.Height)
-        });
+        AddComponent(new ColliderComponent(new Rectangle(21,29,43-21,35-29), new Vector2(0,0)){});
         var sprite = GetComponent<SpriteComponent>();
         // set bullet velocity to forward at max speed
         //transpose direction to bullet

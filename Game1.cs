@@ -125,5 +125,6 @@ public class Game1 : Game
         TextureManager.AddSound("click", "audio/rclick");
         TextureManager.AddSound("gunshot", "audio/gunshot");
         TextureManager.AddSound("demon_death", "audio/demon_death");
+        TextureManager.AddTexture("swordslash", "player/swordslash");
     }
 }

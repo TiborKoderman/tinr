@@ -7,17 +7,19 @@ using tinr;
 class ColliderComponent : Component
 {
     public bool isTrigger = false;
-    public Rectangle hitboxNormalised = new Rectangle(0, 0, 64, 64);
+    public Rectangle bbNormalized = new Rectangle(0, 0, 64, 64);
     private TransformComponent transform;
 
-    public BoundingBox bounds
+    public Vector2 _origin = new(0, 0);
+
+
+    public Rectangle bounds
     {
         get
         {
             transform = entity.GetComponent<TransformComponent>();
-            int centerX = (int)transform.position.X - hitboxNormalised.Width / 2;
-            int centerY = (int)transform.position.Y - hitboxNormalised.Height / 2;
-            return new BoundingBox(new Vector3(centerX, centerY, 0), new Vector3(centerX + hitboxNormalised.Width, centerY + hitboxNormalised.Height, 0));
+            Vector2 position = transform.position;
+            return new Rectangle((int)position.X + bbNormalized.X, (int)position.Y + bbNormalized.Y, bbNormalized.Width, bbNormalized.Height);
         }
         set
         {
@@ -28,8 +30,24 @@ class ColliderComponent : Component
 
     public ColliderComponent()
     {
+        _origin = new Vector2(bbNormalized.Width / 2, bbNormalized.Height / 2);
         ColliderSystem.Register(this);
     }
+
+    public ColliderComponent(Rectangle bounds)
+    {
+        bbNormalized = bounds;
+        _origin = new Vector2(bbNormalized.Width / 2, bbNormalized.Height / 2);
+        ColliderSystem.Register(this);
+    }
+
+    public ColliderComponent(Rectangle bounds, Vector2 origin)
+    {
+        bbNormalized = bounds;
+        _origin = origin;
+        ColliderSystem.Register(this);
+    }
+
 
     public override void Update(GameTime gameTime)
     {
@@ -52,16 +70,13 @@ class ColliderComponent : Component
         Texture2D hitboxTexture = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
         hitboxTexture.SetData(new[] { Color.Red * 0.5f });
 
-        //draw the bounding box
-        BoundingBox box = bounds;
-        Vector3[] corners = box.GetCorners();
-        for (int i = 0; i < 4; i++)
-        {
-            Vector3 corner1 = corners[i];
-            Vector3 corner2 = corners[(i + 1) % 4];
-            spriteBatch.Draw(hitboxTexture, new Rectangle((int)corner1.X, (int)corner1.Y, (int)(corner2 - corner1).Length(), 1), null, Color.White, (float)Math.Atan2(corner2.Y - corner1.Y, corner2.X - corner1.X), Vector2.Zero, SpriteEffects.None, 0);
+        // Rotate the bounding box by 90 degrees
+
+        // Draw the bounding box
+        if (transform != null){
+            float rotation = transform.rotation + MathHelper.ToRadians(90);
+            spriteBatch.Draw(hitboxTexture, transform.position, bbNormalized, Color.White, rotation, _origin, transform.scale, SpriteEffects.None, 0f);
+
         }
-
-
     }
 }

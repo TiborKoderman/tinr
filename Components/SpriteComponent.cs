@@ -24,6 +24,7 @@ class SpriteComponent : Component
     {
         get
         {
+            transform = entity.GetComponent<TransformComponent>();
             return new Rectangle((int)transform.position.X, (int)transform.position.Y, _texture.Width, _texture.Height);
         }
         set
@@ -34,6 +35,15 @@ class SpriteComponent : Component
     public Vector2 _origin;
 
     public Vector2 velocity = Vector2.Zero;
+
+    //Animation
+    public int currentFrame = 0;
+    public int frameHeight = 64;
+    public int frameWidth = 64;
+    public int totalFrames = 1;
+    public float animationSpeed = 0.1f;
+    public float animationTimer = 0f;
+
 
     public float maxVelocity = 5;
 
@@ -106,6 +116,14 @@ class SpriteComponent : Component
 
         EntityManager.AddEntity(bullet);
     }
+
+    // public void Swordslash(float rotation)
+    // {
+    //     var swordslash = new Swordslash(transform, sourceRectangle, ref entity, rotation);
+    //     children.Add(swordslash);
+
+    //     EntityManager.AddEntity(swordslash);
+    // }
 
     public void Destroy()
     {

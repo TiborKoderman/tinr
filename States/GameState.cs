@@ -32,12 +32,12 @@ public class GameState : State
         player = scene1.GetPlayer();
         scene1.Initialize();
 
-        spriteSystem = new SpriteSystem();
 
 
         _KBController = player.GetComponent<KeyboardControllerComponent>();
         _GPController = player.GetComponent<GamepadControllerComponent>();
         _camera = player.GetComponent<CameraComponent>();
+        spriteSystem = new SpriteSystem(_camera);
 
 
     }
