@@ -16,21 +16,15 @@ class SpriteSystem : BaseSystem<SpriteComponent>
     {
         var cameraBounds = _camera.GetRectangle();
 
-        int total = components.Count;
-        int displayed = 0;
-
         foreach (var component in components)
         {
-            total++;
             //if the sprite is within the camera bounds, draw it
-            if (component.rectangle.Intersects(cameraBounds))
-            {
-                displayed++;
-                component.Draw(spriteBatch);
-            }
+            // if (component.rectangle.Intersects(cameraBounds))
+            // {
+            component.Draw(spriteBatch);
+            // }
 
         }
-        Console.WriteLine("Total: " + total + " Displayed: " + displayed);
     }
 
     // public static void Unregister(SpriteComponent component)

@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 class Bullet : Entity
 {
-    public Bullet(TransformComponent transform, Rectangle sourceRectangle, ref Entity parent, float? rotation = null)
+    public Bullet(TransformComponent transform, Rectangle sourceRectangle, Entity parent, float? rotation = null)
     {
         this.parent = parent;
         // if(rotation == null)

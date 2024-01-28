@@ -103,7 +103,7 @@ class SpriteComponent : Component
 
     public void AddBullet()
     {
-        var bullet = new Bullet(transform, sourceRectangle, ref entity);
+        var bullet = new Bullet(transform, sourceRectangle, entity);
         children.Add(bullet);
 
         EntityManager.AddEntity(bullet);
@@ -111,7 +111,7 @@ class SpriteComponent : Component
 
     public void AddBullet(float rotation)
     {
-        var bullet = new Bullet(transform, sourceRectangle, ref entity, rotation);
+        var bullet = new Bullet(transform, sourceRectangle, entity, rotation);
         children.Add(bullet);
 
         EntityManager.AddEntity(bullet);

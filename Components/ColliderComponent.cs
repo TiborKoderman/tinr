@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using tinr;
@@ -11,7 +12,6 @@ class ColliderComponent : Component
     private TransformComponent transform;
 
     public Vector2 _origin = new(0, 0);
-
 
     public Rectangle bounds
     {

@@ -15,6 +15,7 @@ public class Player : Entity
         AddComponent(new CameraComponent());
         AddComponent(new HealthComponent(100));
         AddComponent(new ScoreComponent());
+        AddComponent(new ColliderComponent() { bbNormalized = new Rectangle(0, 0, 64, 64) });
 
         GetComponent<SpriteComponent>().firerate = 2f;
     }

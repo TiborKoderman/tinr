@@ -42,6 +42,11 @@ class DemonAiComponent : Component
         transform = entity.GetComponent<TransformComponent>();
         sprite = entity.GetComponent<SpriteComponent>();
 
+        if(transform == null || sprite == null)
+        {
+            return;
+        }
+
 
         switch (state)
         {

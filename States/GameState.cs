@@ -81,6 +81,7 @@ public class GameState : State
 
         if (player.GetComponent<HealthComponent>().health <= 0)
         {
+            Console.WriteLine("Game Over");
             gameOver = true;
         }
 

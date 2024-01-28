@@ -57,7 +57,9 @@ public class MenuState : State
         };
     }
 
-    private async void LeaderboardButton_Click(object sender, System.EventArgs e)
+
+
+    private void LeaderboardButton_Click(object sender, System.EventArgs e)
     {
         //GET leaderboard from https://decent.koderverse.com/leaderboard as JSON
         //parse JSON into a list of leaderboard entries
@@ -74,6 +76,7 @@ public class MenuState : State
     {
         //load new state
         _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+        // Dispose();
     }
 
     private void ExitGameButton_Click(object sender, System.EventArgs e)
@@ -99,7 +102,8 @@ public class MenuState : State
 
     public override void Update(GameTime gameTime)
     {
-        foreach (var component in _components)
-            component.Update(gameTime);
+            Console.WriteLine("Updating menu state");
+            foreach (var component in _components)
+                component.Update(gameTime);
     }
 }

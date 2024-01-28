@@ -46,6 +46,11 @@ public class Button : Component
     }
     #endregion
 
+    ~Button()
+    {
+        ButtonSystem.Unregister(this);
+    }
+
     public void Draw(SpriteBatch _spriteBatch)
     {
         var color = Color.White;
@@ -86,4 +91,5 @@ public class Button : Component
             }
         }
     }
+
 }

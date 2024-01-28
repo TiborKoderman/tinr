@@ -27,6 +27,8 @@ public class Game1 : Game
     public void ChangeState(State state)
     {
         _nextState = state;
+        ButtonSystem.Cleanup();
+        // _currentState = state;
     }
 
 
@@ -75,6 +77,8 @@ public class Game1 : Game
                 }
             }
         }
+        _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
+
 
     }
 
@@ -83,7 +87,6 @@ public class Game1 : Game
         loadTextures();
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
 
     }
 
@@ -94,6 +97,7 @@ public class Game1 : Game
 
         if (_nextState != null)
         {
+            //delete old state
             _currentState = _nextState;
             _nextState = null;
         }

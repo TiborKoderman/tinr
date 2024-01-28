@@ -29,10 +29,11 @@ class UI
         healthComponent = player.GetComponent<HealthComponent>();
         scoreComponent = player.GetComponent<ScoreComponent>();
         //draw the UI
-        _spriteBatch.Begin();
 
         if (healthComponent != null)
         {
+        _spriteBatch.Begin();
+
             // _spriteBatch.DrawString(TextureManager.GetFont("NotoSansMono"), "Health: " + healthComponent.health, new Vector2(10, 10), Color.White, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0f);
             //draw the healthbar, inside represents the actual health and outside represents the max health
             //stretch the healthBarInsideMiddle to the correct length, to represent the health
@@ -41,10 +42,10 @@ class UI
             //so the length of the inside bar is health/maxHealth * 64*4*scale
 
             //draw the inside
-            if(healthComponent.health > 0)
-            _spriteBatch.Draw(ui_elements, new Vector2(10, 10), healthBarInsideMiddle, Color.White, 0f, Vector2.Zero, new Vector2((4*scale)*(healthComponent.health/healthComponent.maxHealth), scale), SpriteEffects.None, 0f);
-
-
+            // if (healthComponent != null && healthComponent.health > 0)
+            // {
+            _spriteBatch.Draw(ui_elements, new Vector2(10, 10), healthBarInsideMiddle, Color.White, 0f, Vector2.Zero, new Vector2((4 * scale) * (healthComponent.health / healthComponent.maxHealth), scale), SpriteEffects.None, 0f);
+            // }
 
             //draw the start
             _spriteBatch.Draw(ui_elements, new Vector2(10, 10), healthBarStart, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -53,11 +54,9 @@ class UI
             _spriteBatch.Draw(ui_elements, new Vector2(10 + (64 * 3) * scale, 10), healthBarEnd, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             //draw the inside end
 
-
-
             //draw the score
             _spriteBatch.DrawString(TextureManager.GetFont("NotoSansMono"), "Score: " + scoreComponent.getScore(), new Vector2(10, 150), Color.White, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0f);
-        }
         _spriteBatch.End();
+        }
     }
 }

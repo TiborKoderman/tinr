@@ -1,9 +1,23 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using tinr;
 
-public abstract class State{
+public abstract class State : IDisposable
+{
+
+    public void Dispose()
+    {
+
+        _content.Dispose();
+        _graphicsDevice.Dispose();
+    }
+
+    ~State()
+    {
+        Dispose();
+    }
     #region Fields
     protected ContentManager _content;
     protected GraphicsDevice _graphicsDevice;
@@ -15,12 +29,15 @@ public abstract class State{
     public abstract void PostUpdate(GameTime gameTime);
     public abstract void Update(GameTime gameTime);
 
+
+
     public State(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
     {
         _game = game;
         _graphicsDevice = graphicsDevice;
         _content = content;
     }
+
 
     #endregion
 }
