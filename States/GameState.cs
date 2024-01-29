@@ -49,6 +49,9 @@ public class GameState : State
         spriteSystem.Draw(spriteBatch);
         HealthSystem.Draw(spriteBatch);
         ColliderSystem.Draw(spriteBatch);
+
+
+
         spriteBatch.End();
 
         //draw the UI

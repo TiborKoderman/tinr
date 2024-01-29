@@ -114,6 +114,7 @@ public class Game1 : Game
 
         _currentState.Draw(gameTime, _spriteBatch);
 
+
         base.Draw(gameTime);
     }
     private void loadTextures()

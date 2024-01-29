@@ -1,0 +1,4 @@
+class WallSystem : BaseSystem<WallComponent>
+{
+    
+}
