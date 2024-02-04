@@ -28,8 +28,8 @@ class DemonAiComponent : Component
     public DemonAiComponent()
     {
         state = State.Idle;
-        detectionRadius = 300;
-        attackRadius = 200;
+        detectionRadius = 500;
+        attackRadius = 400;
 
         player = EntityManager.GetEntityOfType<Player>();
 

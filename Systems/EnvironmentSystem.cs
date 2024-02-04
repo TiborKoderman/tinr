@@ -18,7 +18,6 @@ class EnvironmentSystem : BaseSystem<EnvironmentComponent>
     public EnvironmentSystem()
     {
         List<Tile> tiles = new List<Tile>();
-        GenerateEnvironment(ref tiles, new Vector2(0, 0), 0);
     }
 
 
@@ -46,28 +45,6 @@ class EnvironmentSystem : BaseSystem<EnvironmentComponent>
 
 
 
-    public static void GenerateEnvironment(ref List<Tile> tiles, Vector2 coords, int totalTiles)
-    {
-        if (tiles.Count > totalTiles)
-        {
-            //c1 tile
-            if (tiles[totalTiles].getContactPoints().Count == 1)
-            {
-                var nextTile = TileTypes.getRandomTileWithContactPoint(tiles[totalTiles].getContactPoints()[0]);
-                tiles.Add(nextTile);
-                GenerateEnvironment(ref tiles, nextTile.getNextTileCoordsFromContactPoint(nextTile.getContactPoints()[0]), totalTiles++);
-            }
-        }
-        if (tiles.Count == 0)
-        {
-            var startTile = TileTypes.getRandomStartTile();
-            tiles.Add(startTile);
-            GenerateEnvironment(ref tiles, startTile.getNextTileCoordsFromContactPoint(startTile.getContactPoints()[0]), totalTiles++);
-        }
-        else{
-        }
-        
-    }
 
 
 
@@ -81,7 +58,7 @@ class EnvironmentSystem : BaseSystem<EnvironmentComponent>
 
 }
 
-class Tile : ICloneable
+public class Tile : ICloneable
 {
 
     public Vector2 sourceCoords;
@@ -163,40 +140,41 @@ class Tile : ICloneable
 
 }
 
-class TileTypes
+public class TileTypes
 {
     private static Random random = new Random();
 
-    private static List<Tile> tileTypes = new List<Tile>();
+    public static Dictionary<String, Tile> tileTypes = new Dictionary<string, Tile>();
 
 
-    private static void InitializeTiles()
+    public static void InitializeTiles()
     {
         //add tiles to tiles
-        AddTileType(new Tile(new Vector2(0, 0), 0, "1000")); // c1up
-        AddTileType(new Tile(new Vector2(0, 0), 1, "0100")); // c1right
-        AddTileType(new Tile(new Vector2(0, 0), 2, "0010")); // c1down
-        AddTileType(new Tile(new Vector2(0, 0), 3, "0001")); // c1left
+        AddTileType("c1up", new Tile(new Vector2(0, 0), 0, "1000")); // c1up
+        AddTileType("c1right", new Tile(new Vector2(0, 0), 1, "0100")); // c1right
+        AddTileType("c1down", new Tile(new Vector2(0, 0), 2, "0010")); // c1down
+        AddTileType("c1left", new Tile(new Vector2(0, 0), 3, "0001")); // c1left
 
-        AddTileType(new Tile(new Vector2(1, 0), 0, "1010")); // c2updown
-        AddTileType(new Tile(new Vector2(1, 0), 1, "0101")); // c2rightleft
+        AddTileType("c2updown", new Tile(new Vector2(1, 0), 0, "1010")); // c2updown
+        AddTileType("c2rightleft", new Tile(new Vector2(1, 0), 1, "0101")); // c2rightleft
 
-        AddTileType(new Tile(new Vector2(2, 0), 0, "1100")); // c2upright
-        AddTileType(new Tile(new Vector2(2, 0), 1, "0110")); // c2rightdown
-        AddTileType(new Tile(new Vector2(2, 0), 2, "0011")); // c2downleft
-        AddTileType(new Tile(new Vector2(2, 0), 3, "1001")); // c2leftup
+        AddTileType("c2upright", new Tile(new Vector2(2, 0), 0, "1100")); // c2upright
+        AddTileType("c2rightdown", new Tile(new Vector2(2, 0), 1, "0110")); // c2rightdown
+        AddTileType("c2downleft", new Tile(new Vector2(2, 0), 2, "0011")); // c2downleft
+        AddTileType("c2leftup", new Tile(new Vector2(2, 0), 3, "1001")); // c2leftup
 
-        AddTileType(new Tile(new Vector2(3, 0), 0, "1110")); // c3uprightdown
-        AddTileType(new Tile(new Vector2(3, 0), 1, "0111")); // c3rightdownleft
-        AddTileType(new Tile(new Vector2(3, 0), 2, "1011")); // c3downleftup
-        AddTileType(new Tile(new Vector2(3, 0), 3, "1101")); // c3leftupright
+        AddTileType("c3uprightdown", new Tile(new Vector2(3, 0), 0, "1110")); // c3uprightdown
+        AddTileType("c3rightdownleft", new Tile(new Vector2(3, 0), 1, "0111")); // c3rightdownleft
+        AddTileType("c3downleftup", new Tile(new Vector2(3, 0), 2, "1011")); // c3downleftup
+        AddTileType("c3leftupright", new Tile(new Vector2(3, 0), 3, "1101")); // c3leftupright
 
-        AddTileType(new Tile(new Vector2(4, 0), 0, "1111")); // c4all
+        AddTileType("c4all", new Tile(new Vector2(4, 0), 0, "1111")); // c4all
 
-        AddTileType(new Tile(new Vector2(0, 3), 0, "1000")); // exitup
-        AddTileType(new Tile(new Vector2(0, 3), 1, "0100")); // exitright
-        AddTileType(new Tile(new Vector2(0, 3), 2, "0010")); // exitdown
-        AddTileType(new Tile(new Vector2(0, 3), 3, "0001")); // exitleft
+
+        AddTileType("exitup", new Tile(new Vector2(0, 3), 0, "1000")); // exitup
+        AddTileType("exitright", new Tile(new Vector2(0, 3), 1, "0100")); // exitright
+        AddTileType("exitdown", new Tile(new Vector2(0, 3), 2, "0010")); // exitdown
+        AddTileType("exitleft", new Tile(new Vector2(0, 3), 3, "0001")); // exitleft
     }
 
     static TileTypes()
@@ -205,37 +183,9 @@ class TileTypes
     }
 
 
-    public static void AddTileType(Tile tile)
+    public static void AddTileType(String tilename, Tile tile)
     {
-        tileTypes.Add(tile);
+        tileTypes.Add(tilename, tile);
     }
 
-    public static List<Tile> getTilesWithContactPoint(char contactPoint)
-    {
-        List<Tile> tiles = new List<Tile>();
-        foreach (Tile tile in tileTypes)
-        {
-            if (tile.contactPoints[contactPoint])
-            {
-                tiles.Add(tile);
-            }
-        }
-        return tiles;
-    }
-
-    public static Tile getRandomTileWithContactPoint(char contactPoint)
-    {
-        List<Tile> tiles = getTilesWithContactPoint(contactPoint);
-        return tiles[random.Next(tiles.Count)].Clone() as Tile;
-    }
-
-    public static Tile getRandomStartTile()
-    {
-        return tileTypes[random.Next(4)].Clone() as Tile;
-    }
-
-    public static Tile getDeadEndTile(char contactPoint) //c1 tile with contact point
-    {
-        return tileTypes[0].Clone() as Tile;
-    }
 }

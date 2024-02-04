@@ -64,6 +64,13 @@ class ColliderComponent : Component
         entity.GetComponent<HealthComponent>().Damage(10);
     }
 
+    public void OnWallCollision(Rectangle wall)
+    {
+        //stop movement
+        transform = entity.GetComponent<TransformComponent>();
+        transform.position = transform.previousPosition;
+    }
+
     // Draw the hitbox at the center of the entity
     public void Draw(SpriteBatch spriteBatch)
     {

@@ -8,7 +8,7 @@ class ColliderSystem : BaseSystem<ColliderComponent>
 {
     //scan for collisions
 
-    private static QuadTree quadTree = new QuadTree(0, new Rectangle(-64*32, -64*32, 64*64, 64*64)); // Adjust the size as needed
+    private static QuadTree quadTree = new QuadTree(0, new Rectangle(-64 * 32, -64 * 32, 64 * 64, 64 * 64)); // Adjust the size as needed
 
     public static void Scan()
     {
@@ -26,21 +26,40 @@ class ColliderSystem : BaseSystem<ColliderComponent>
 
             foreach (var otherComponent in returnObjects)
             {
-                if (component.entity.ID != otherComponent.entity.ID)
+                if (component.entity.ID == otherComponent.entity.ID) // skip self
+                    continue;
+                if (component.entity.parent == null && otherComponent.entity.parent == null) //skip if both are root
+                    continue;
+                if (component.entity.parent != null && otherComponent.entity.parent != null) //skip if both are child
+                    continue;
+                if (component.entity.parent != null && component.entity.parent.ID == otherComponent.entity.ID) //skip if parent is the same as child
+                    continue;
+                if (otherComponent.entity.parent != null && component.entity.ID == otherComponent.entity.parent.ID) //skip if parent is the same as child
+                    continue;
+                
+                if (component.bounds.Intersects(otherComponent.bounds))
                 {
-                    if(component.entity.parent != null && otherComponent.entity.parent != null)
-                    {
-                        if(component.entity.parent.ID == otherComponent.entity.parent.ID)
-                        {
-                            continue;
-                        }
-                    }
-                    if (component.bounds.Intersects(otherComponent.bounds))
-                    {
-                        component.OnCollision(otherComponent);
-                    }
+                    component.OnCollision(otherComponent);
                 }
             }
+
+            // Parallel.ForEach(returnObjects, otherComponent =>
+            // {
+            //     if (component.entity.ID != otherComponent.entity.ID)
+            //     {
+            //         if (component.entity.parent != null && otherComponent.entity.parent != null)
+            //         {
+            //             if (component.entity.parent.ID != otherComponent.entity.parent.ID)
+            //             {
+            //                 if (component.bounds.Intersects(otherComponent.bounds))
+            //                 {
+            //                     component.OnCollision(otherComponent);
+            //                 }
+            //             }
+            //         }
+
+            //     }
+            // });
         }
 
     }

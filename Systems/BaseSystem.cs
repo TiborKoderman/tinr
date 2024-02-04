@@ -4,7 +4,12 @@ using tinr;
 
 class BaseSystem<T> where T : Component
 {
-    protected static List<T> components = new List<T>();
+    public static List<T> components = new List<T>();
+
+    public static void getComponents(ref List<T> components)
+    {
+        components = BaseSystem<T>.components;
+    }
 
     public static void Register(T component)
     {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -22,15 +23,19 @@ public class GameState : State
 
 
     public Entity player;
-    public static Scene scene1;
+    public static Scene scene;
     private bool gameOver = false;
 
 
-    public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
+
+    public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content, Scene _scene) : base(game, graphicsDevice, content)
     {
-        scene1 = new Scene1();
-        player = scene1.GetPlayer();
-        scene1.Initialize();
+        // scene1 = new Scene1();
+        scene = _scene;
+        scene.Initialize();
+
+
+        player = scene.GetPlayer();
 
 
 
@@ -48,7 +53,7 @@ public class GameState : State
         EnvironmentSystem.Draw(spriteBatch);
         spriteSystem.Draw(spriteBatch);
         HealthSystem.Draw(spriteBatch);
-        ColliderSystem.Draw(spriteBatch);
+        // ColliderSystem.Draw(spriteBatch);
 
 
 
@@ -73,6 +78,7 @@ public class GameState : State
         ColliderSystem.Scan();
         DemonAiSystem.Update(gameTime);
         ButtonSystem.Update(gameTime);
+        ExitTileSystem.Update(gameTime);
 
 
         _KBController.Update(gameTime);
@@ -93,6 +99,12 @@ public class GameState : State
             Console.WriteLine("Game Over");
             // _game.Exit();
             _game.ChangeState(new EndgameMenuState(_game, _graphicsDevice, _content, this));
+        }
+        
+        foreach(var component in ExitTileSystem.components){
+            if(component.gotoNextScene == true){
+                _game.ChangeState(new GameState(_game, _graphicsDevice, _content, new Scene2()));
+            }
         }
     }
 

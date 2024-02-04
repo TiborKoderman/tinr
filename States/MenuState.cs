@@ -75,7 +75,7 @@ public class MenuState : State
     private void NewGameButton_Click(object sender, System.EventArgs e)
     {
         //load new state
-        _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+        _game.ChangeState(new GameState(_game, _graphicsDevice, _content, new Scene1()));
         // Dispose();
     }
 

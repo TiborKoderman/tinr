@@ -9,6 +9,12 @@ public class Scene
         Add(player);
     }
 
+    public Scene(Player player)
+    {
+        this.player = player;
+        Add(player);
+    }
+
     public virtual void Initialize()
     {
         

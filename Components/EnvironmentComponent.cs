@@ -1,8 +1,9 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace tinr;
-class EnvironmentComponent : Component
+public class EnvironmentComponent : Component
 {
     private Texture2D _texture;
     public Rectangle rectangle
@@ -34,6 +35,18 @@ class EnvironmentComponent : Component
         _scale = new Vector2(8, 8);
         EnvironmentSystem.Register(this);
     }
+
+    public EnvironmentComponent(string tileType, Vector2 position)
+    {
+        Tile tile = TileTypes.tileTypes[tileType];
+        _position = position * 64 * 8;
+        sourceRectangle = new Rectangle((int)tile.sourceCoords.X * 64, (int)tile.sourceCoords.Y * 64, 64, 64);
+        _texture = TextureManager.GetTexture("tiles");
+        _origin = new Vector2(sourceRectangle.Width / 2, sourceRectangle.Height / 2);
+        _scale = new Vector2(8, 8);
+        EnvironmentSystem.Register(this);
+    }
+
     public EnvironmentComponent(Vector2 position, Vector2 sourceCoords, int rotation)
     {
         _position = position * 64 * 8;
@@ -74,6 +87,8 @@ class EnvironmentComponent : Component
                 }
             }
         }
+
+
 
         sourceRectangle = new Rectangle(sourceRectangle.X + minX, sourceRectangle.Y + minY, maxX - minX, maxY - minY);
 

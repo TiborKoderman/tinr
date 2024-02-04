@@ -68,6 +68,8 @@ class SpriteComponent : Component
     {
         transform = entity.GetComponent<TransformComponent>();
 
+        // transform.previousPosition = transform.position;
+
         if (velocity.Length() > maxVelocity)
         {
             velocity = Vector2.Normalize(velocity) * maxVelocity;
@@ -88,7 +90,6 @@ class SpriteComponent : Component
                 Destroy();
             }
         }
-
 
     }
 
