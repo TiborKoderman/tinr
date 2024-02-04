@@ -175,6 +175,23 @@ public class TileTypes
         AddTileType("exitright", new Tile(new Vector2(0, 3), 1, "0100")); // exitright
         AddTileType("exitdown", new Tile(new Vector2(0, 3), 2, "0010")); // exitdown
         AddTileType("exitleft", new Tile(new Vector2(0, 3), 3, "0001")); // exitleft
+
+        AddTileType("full", new Tile(new Vector2(4, 2), 0, "1111")); // full
+
+        AddTileType("full_left_wall", new Tile(new Vector2(3, 2), 0, "1111")); // full_left_wall
+        AddTileType("full_up_wall", new Tile(new Vector2(3, 2), 1, "1111")); // full_top_wall
+        AddTileType("full_right_wall", new Tile(new Vector2(3, 2), 2, "1111")); // full_right_wall
+        AddTileType("full_down_wall", new Tile(new Vector2(3, 2), 3, "1111")); // full_bottom_wall
+
+        AddTileType("full_down_left_corner", new Tile(new Vector2(2, 2), 0, "1111")); // full_exit_up
+        AddTileType("full_up_left_corner", new Tile(new Vector2(2, 2), 1, "1111")); // full_exit_up
+        AddTileType("full_up_right_corner", new Tile(new Vector2(2, 2), 2, "1111")); // full_exit_down
+        AddTileType("full_down_right_corner", new Tile(new Vector2(2, 2), 3, "1111")); // full_exit_down
+
+        AddTileType("full_exit_up", new Tile(new Vector2(3, 3), 1, "1111")); // full_exit_up
+
+
+
     }
 
     static TileTypes()

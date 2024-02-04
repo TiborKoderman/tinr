@@ -26,6 +26,8 @@ public class GameState : State
     public static Scene scene;
     private bool gameOver = false;
 
+    private int _currentScene = 1;
+
 
 
     public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content, Scene _scene) : base(game, graphicsDevice, content)
@@ -100,11 +102,24 @@ public class GameState : State
             // _game.Exit();
             _game.ChangeState(new EndgameMenuState(_game, _graphicsDevice, _content, this));
         }
-        
-        foreach(var component in ExitTileSystem.components){
-            if(component.gotoNextScene == true){
-                _game.ChangeState(new GameState(_game, _graphicsDevice, _content, new Scene2()));
+
+        for (int i = 0; i < ExitTileSystem.components.Count; i++)
+        {
+            if (ExitTileSystem.components[i].gotoNextScene == true)
+            {
+                Console.WriteLine("Next scene");
+                _currentScene++;
+                ExitTileSystem.Cleanup();
+                EntityManager.ClearExceptPlayer();
+                switch (_currentScene)
+                {
+                    case 2:
+                        _game.ChangeState(new GameState(_game, _graphicsDevice, _content, new Scene2(scene.player)));
+                        break;
+                }
+
             }
+
         }
     }
 

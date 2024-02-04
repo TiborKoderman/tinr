@@ -24,9 +24,11 @@ public class Game1 : Game
     private State _currentState;
     private State _nextState;
 
+
     public void ChangeState(State state)
     {
         _nextState = state;
+        // EntityManager.ClearExceptPlayer();
         ButtonSystem.Cleanup();
         // _currentState = state;
     }

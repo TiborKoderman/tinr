@@ -50,4 +50,16 @@ public class EntityManager : Entity
         _nextID = 0;
     }
 
+    public static void ClearExceptPlayer()
+    {
+        Entity player = GetEntityOfType<Player>();
+        foreach (KeyValuePair<UInt64, Entity> entity in entities)
+        {
+            if (entity.Value.ID != player.ID)
+            {
+                entity.Value.Cleanup();
+            }
+        }
+    }
+
 }

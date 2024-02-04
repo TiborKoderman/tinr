@@ -2,18 +2,18 @@ using tinr;
 
 public class Scene
 {
-    Player player;
+    public Player player;
     public Scene()
     {
-        player = new Player();
-        Add(player);
+
     }
 
-    public Scene(Player player)
-    {
-        this.player = player;
-        Add(player);
-    }
+    // public Scene(Player player)
+    // {
+    //     EntityManager.ClearExceptPlayer();
+    //     this.player = player;
+    //     Add(player);
+    // }
 
     public virtual void Initialize()
     {
@@ -32,6 +32,6 @@ public class Scene
 
     ~Scene()
     {
-        EntityManager.Clear();
+        EntityManager.ClearExceptPlayer();
     }
 }
